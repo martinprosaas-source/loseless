@@ -63,6 +63,26 @@ INDEX = [
      'After every call, your leads are sorted automatically. Those who can’t afford your program get a partner offer within their budget. You earn the commission, and they come back to your program when they’re ready.'),
     ('>Calculer ce que je perds</a>', '>See what I’m losing</a>'),
 
+    # Chiffres (après le hero)
+    ('<span class="intro__num" data-to="60000" data-suffix="&nbsp;€">60&#8239;000&nbsp;€</span><span class="intro__label">de chiffre d\'affaires généré</span>',
+     '<span class="intro__num" data-to="60000" data-prefix="€">€60,000</span><span class="intro__label">in revenue generated</span>'),
+    ('<span class="intro__label">ventes low&#8209;ticket conclues</span>', '<span class="intro__label">low&#8209;ticket sales closed</span>'),
+    ('<span class="intro__label">seul partenaire. Et déjà ces résultats.</span>', '<span class="intro__label">partner so far. And already these results.</span>'),
+    ('<button class="intro-skip" type="button">Passer</button>', '<button class="intro-skip" type="button">Skip</button>'),
+    ('<span class="figures__t-full">Loseless en chiffres</span><span class="figures__t-light">Déjà en place</span>',
+     '<span class="figures__t-full">Loseless in numbers</span><span class="figures__t-light">Already live</span>'),
+    ('Affilié Base44</p>', 'Base44 affiliate</p>'),
+    ('<span data-count="60000" data-suffix="&nbsp;€">60&#8239;000&nbsp;€</span>',
+     '<span data-count="60000" data-prefix="€">€60,000</span>'),
+    ('>de chiffre d\'affaires généré</span>', '>in revenue generated</span>'),
+    ('>ventes low&#8209;ticket conclues</span>', '>low&#8209;ticket sales closed</span>'),
+    ('>seul partenaire. Et déjà ces résultats.</span>', '>partner so far. And already these results.</span>'),
+    ('Avec notre premier partenaire, Gaspard Grosjean, fondateur d\'ECOM&nbsp;BOSS.',
+     'With our first partner, Gaspard Grosjean, founder of ECOM&nbsp;BOSS.'),
+    ('Chiffres au 27&nbsp;septembre 2026', 'Figures as of September 27, 2026'),
+    ('data-text="Devenir le prochain partenaire">Devenir le prochain partenaire</span>',
+     'data-text="Become our next partner">Become our next partner</span>'),
+
     # 01 — Le problème
     ('01 — Le problème', '01 — The problem'),
     ('Un <span class="nobr">«&nbsp;pas le budget&nbsp;»</span> n\'est pas un&nbsp;non.',

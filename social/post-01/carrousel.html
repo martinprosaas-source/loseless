@@ -1,0 +1,117 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<style>
+:root{--encre:#121212;--papier:#F4F2EE;--craie:#E6E2DA;--pierre:#6B6660;--v:#D2401C;--sans:"Schibsted Grotesk",sans-serif;--serif:"Source Serif 4",serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;display:grid;gap:40px;padding:40px;justify-content:center}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;padding:96px 96px 88px;display:flex;flex-direction:column;background:var(--papier);color:var(--encre);font-family:var(--serif)}
+.dark{background:var(--encre);color:var(--papier)} .craie{background:var(--craie)}
+.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}
+.logo{display:inline-flex;align-items:center;gap:12px;height:36px} .logo .mark{width:36px;height:36px} .logo .word{height:36px;width:165px}
+.count{font:700 22px/1 var(--sans);letter-spacing:.08em;color:var(--pierre)} .count b{color:var(--v)} .dark .count{color:rgba(230,226,218,.55)}
+.eyebrow{font:700 24px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--v);margin-bottom:36px}
+.h{font-family:var(--sans);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.body{font-size:34px;line-height:1.45}
+.muted{color:var(--pierre)} .dark .muted{color:rgba(230,226,218,.72)}
+.grow{flex:1}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;font:700 24px/1.3 var(--sans);letter-spacing:-.01em;position:relative;z-index:2}
+.rule{height:1px;background:rgba(18,18,18,.16);margin:40px 0} .dark .rule{background:rgba(244,242,238,.18)}
+/* 1 */
+.ringbg{position:absolute;width:1000px;height:1000px;left:110px;top:120px;color:rgba(244,242,238,.07);z-index:0}
+.s1 .h{font-size:132px;margin-top:auto;position:relative;z-index:2}
+.s1 .promise{font-style:italic;font-size:46px;line-height:1.2;margin-top:44px;position:relative;z-index:2}
+.swipe{display:inline-flex;align-items:center;gap:14px} .swipe i{display:inline-block;width:56px;height:56px;border-radius:50%;background:var(--v);color:#fff;font-style:normal;display:grid;place-items:center;font-size:28px}
+/* 2 */
+.s2 .big{font:800 400px/.82 var(--sans);letter-spacing:-.06em;color:var(--v);margin-top:auto}
+.s2 .h{font-size:64px;margin-top:40px;max-width:15ch}
+/* 3 */
+.s3 .h{font-size:108px;margin-top:auto;max-width:9ch}
+.costs{list-style:none;margin-top:56px} .costs li{display:flex;justify-content:space-between;align-items:baseline;padding:26px 0;border-top:1px solid rgba(18,18,18,.16);font:800 52px/1 var(--sans);letter-spacing:-.04em} .costs li:last-child{border-bottom:1px solid rgba(18,18,18,.16)} .costs li span{font:700 24px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--pierre)}
+.s3 .body{margin-top:48px}
+/* 4 */
+.s4 .h{font-size:92px;margin-top:64px}
+.steps{list-style:none;margin-top:56px;position:relative}
+.steps::before{content:"";position:absolute;left:21px;top:14px;bottom:30px;width:2px;background:rgba(18,18,18,.18)}
+.steps li{display:flex;gap:40px;padding:0 0 38px;position:relative}
+.steps .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--craie);box-shadow:inset 0 0 0 2px var(--encre);display:grid;place-items:center;font:700 16px/1 var(--sans);letter-spacing:.04em;position:relative;z-index:1}
+.steps li.hot .n{background:var(--v);box-shadow:none;color:#fff}
+.steps h3{font:800 38px/1.05 var(--sans);letter-spacing:-.035em} .steps p{font-size:26px;line-height:1.35;color:var(--pierre);margin-top:4px}
+/* 5 */
+.s5 .h{font-size:112px;margin-top:64px;max-width:8ch}
+.s5 .promise{font-style:italic;font-size:44px;margin-top:28px}
+.split{display:flex;align-items:center;gap:56px;margin-top:auto}
+.split svg{width:540px;height:540px;flex:none}
+.split .c{position:relative;width:540px;height:540px;flex:none}
+.split .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.split .center b{font:800 120px/.9 var(--sans);letter-spacing:-.05em} .split .center span{font:700 20px/1.3 var(--sans);color:var(--pierre);margin-top:10px;max-width:9em}
+.legend{list-style:none;display:grid;gap:26px} .legend li{font:700 30px/1.2 var(--sans);letter-spacing:-.02em;display:flex;align-items:flex-start;gap:16px} .legend i{width:18px;height:18px;border-radius:50%;flex:none;margin-top:9px}
+.legend small{display:block;font:400 24px/1.3 var(--serif);color:var(--pierre);letter-spacing:0;margin-top:4px}
+/* 6 */
+.s6 .h{font-size:96px;margin-top:64px;max-width:11ch}
+.stats{list-style:none;margin-top:auto} .stats li{padding:34px 0;border-top:1px solid rgba(244,242,238,.18);display:flex;align-items:baseline;justify-content:space-between;gap:24px}
+.stats b{font:800 120px/.85 var(--sans);letter-spacing:-.05em} .stats b small{font-size:.42em;letter-spacing:-.03em} .stats span{font:700 28px/1.2 var(--sans);color:rgba(230,226,218,.75);text-align:right}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;box-shadow:inset 0 0 0 1.5px rgba(244,242,238,.3);font:700 22px/1 var(--sans)} .pill i{width:10px;height:10px;border-radius:50%;background:var(--papier)}
+/* 7 */
+.s7{justify-content:space-between}
+.s7 .ringbig{position:absolute;width:980px;height:980px;left:50px;top:170px;color:rgba(244,242,238,.08)}
+.s7 .h{font-size:170px;position:relative;z-index:2;margin-top:auto}
+.s7 .body{position:relative;z-index:2;margin-top:36px;max-width:22em}
+.cta{display:inline-flex;align-items:center;gap:18px;margin-top:56px;padding:30px 48px;border-radius:999px;background:var(--v);color:#fff;font:700 34px/1 var(--sans);letter-spacing:-.01em;position:relative;z-index:2;align-self:flex-start}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="wm" viewBox="982.7 0 3309.7 724"><path fill="currentColor" d="M982.7 724L982.7 0L1136.7 0L1136.7 724ZM1424.84 736Q1344.84 736 1289.34 706.5Q1233.84 677 1204.34 615.5Q1174.84 554 1174.84 460Q1174.84 366 1204.34 305Q1233.84 244 1289.34 214.5Q1344.84 185 1424.84 185Q1504.84 185 1560.84 214.5Q1616.84 244 1646.34 305Q1675.84 366 1675.84 460Q1675.84 554 1646.34 615.5Q1616.84 677 1560.84 706.5Q1504.84 736 1424.84 736ZM1424.84 619Q1457.84 619 1478.34 605Q1498.84 591 1508.34 562Q1517.84 533 1517.84 488L1517.84 433Q1517.84 388 1508.34 358.5Q1498.84 329 1478.34 315Q1457.84 301 1424.84 301Q1392.84 301 1371.84 315Q1350.84 329 1341.84 358.5Q1332.84 388 1332.84 433L1332.84 488Q1332.84 533 1341.84 562Q1350.84 591 1371.84 605Q1392.84 619 1424.84 619ZM1913.78 736Q1862.78 736 1821.78 725Q1780.78 714 1751.28 693Q1721.78 672 1705.78 642Q1689.78 612 1689.78 573Q1689.78 569 1690.28 564.5Q1690.78 560 1691.78 555L1835.78 555Q1835.78 559 1835.78 562.5Q1835.78 566 1835.78 569Q1835.78 589 1846.28 602.5Q1856.78 616 1874.78 623Q1892.78 630 1915.78 630Q1932.78 630 1950.28 625.5Q1967.78 621 1979.28 610.5Q1990.78 600 1990.78 582Q1990.78 560 1974.28 548Q1957.78 536 1930.78 528Q1903.78 520 1871.78 512Q1841.78 504 1811.78 493Q1781.78 482 1756.28 464.5Q1730.78 447 1715.28 419.5Q1699.78 392 1699.78 350Q1699.78 305 1717.28 273.5Q1734.78 242 1765.28 222.5Q1795.78 203 1835.28 194Q1874.78 185 1919.78 185Q1962.78 185 1999.78 193.5Q2036.78 202 2066.28 220Q2095.78 238 2112.28 265.5Q2128.78 293 2128.78 330Q2128.78 335 2128.28 341.5Q2127.78 348 2127.78 353L1984.78 353L1984.78 341Q1984.78 324 1975.78 313Q1966.78 302 1951.28 296Q1935.78 290 1915.78 290Q1902.78 290 1891.28 293Q1879.78 296 1869.78 301Q1859.78 306 1854.28 314Q1848.78 322 1848.78 334Q1848.78 350 1860.78 361Q1872.78 372 1895.28 378.5Q1917.78 385 1942.78 393Q1974.78 400 2009.78 409.5Q2044.78 419 2075.28 435Q2105.78 451 2124.28 480Q2142.78 509 2142.78 558Q2142.78 606 2124.78 640.5Q2106.78 675 2075.78 696Q2044.78 717 2003.28 726.5Q1961.78 736 1913.78 736ZM2408.22 736Q2327.22 736 2271.22 707Q2215.22 678 2186.22 617Q2157.22 556 2157.22 460Q2157.22 365 2186.22 304Q2215.22 243 2271.22 214Q2327.22 185 2406.22 185Q2485.22 185 2538.22 212Q2591.22 239 2617.72 298.5Q2644.22 358 2644.22 456L2644.22 490L2315.22 490Q2315.22 535 2324.22 565Q2333.22 595 2353.22 610Q2373.22 625 2408.22 625Q2429.22 625 2444.72 619.5Q2460.22 614 2470.72 602.5Q2481.22 591 2487.22 574.5Q2493.22 558 2492.22 536L2644.22 536Q2643.22 585 2628.22 622.5Q2613.22 660 2583.22 685.5Q2553.22 711 2509.22 723.5Q2465.22 736 2408.22 736ZM2316.22 406L2486.22 406Q2486.22 377 2481.72 356Q2477.22 335 2467.22 321.5Q2457.22 308 2442.22 301.5Q2427.22 295 2407.22 295Q2377.22 295 2357.72 307.5Q2338.22 320 2328.22 344.5Q2318.22 369 2316.22 406ZM2680.08 724L2680.08 0L2834.08 0L2834.08 724ZM3123.22 736Q3042.22 736 2986.22 707Q2930.22 678 2901.22 617Q2872.22 556 2872.22 460Q2872.22 365 2901.22 304Q2930.22 243 2986.22 214Q3042.22 185 3121.22 185Q3200.22 185 3253.22 212Q3306.22 239 3332.72 298.5Q3359.22 358 3359.22 456L3359.22 490L3030.22 490Q3030.22 535 3039.22 565Q3048.22 595 3068.22 610Q3088.22 625 3123.22 625Q3144.22 625 3159.72 619.5Q3175.22 614 3185.72 602.5Q3196.22 591 3202.22 574.5Q3208.22 558 3207.22 536L3359.22 536Q3358.22 585 3343.22 622.5Q3328.22 660 3298.22 685.5Q3268.22 711 3224.22 723.5Q3180.22 736 3123.22 736ZM3031.22 406L3201.22 406Q3201.22 377 3196.72 356Q3192.22 335 3182.22 321.5Q3172.22 308 3157.22 301.5Q3142.22 295 3122.22 295Q3092.22 295 3072.72 307.5Q3053.22 320 3043.22 344.5Q3033.22 369 3031.22 406ZM3598.31 736Q3547.31 736 3506.31 725Q3465.31 714 3435.81 693Q3406.31 672 3390.31 642Q3374.31 612 3374.31 573Q3374.31 569 3374.81 564.5Q3375.31 560 3376.31 555L3520.31 555Q3520.31 559 3520.31 562.5Q3520.31 566 3520.31 569Q3520.31 589 3530.81 602.5Q3541.31 616 3559.31 623Q3577.31 630 3600.31 630Q3617.31 630 3634.81 625.5Q3652.31 621 3663.81 610.5Q3675.31 600 3675.31 582Q3675.31 560 3658.81 548Q3642.31 536 3615.31 528Q3588.31 520 3556.31 512Q3526.31 504 3496.31 493Q3466.31 482 3440.81 464.5Q3415.31 447 3399.81 419.5Q3384.31 392 3384.31 350Q3384.31 305 3401.81 273.5Q3419.31 242 3449.81 222.5Q3480.31 203 3519.81 194Q3559.31 185 3604.31 185Q3647.31 185 3684.31 193.5Q3721.31 202 3750.81 220Q3780.31 238 3796.81 265.5Q3813.31 293 3813.31 330Q3813.31 335 3812.81 341.5Q3812.31 348 3812.31 353L3669.31 353L3669.31 341Q3669.31 324 3660.31 313Q3651.31 302 3635.81 296Q3620.31 290 3600.31 290Q3587.31 290 3575.81 293Q3564.31 296 3554.31 301Q3544.31 306 3538.81 314Q3533.31 322 3533.31 334Q3533.31 350 3545.31 361Q3557.31 372 3579.81 378.5Q3602.31 385 3627.31 393Q3659.31 400 3694.31 409.5Q3729.31 419 3759.81 435Q3790.31 451 3808.81 480Q3827.31 509 3827.31 558Q3827.31 606 3809.31 640.5Q3791.31 675 3760.31 696Q3729.31 717 3687.81 726.5Q3646.31 736 3598.31 736ZM4063.46 736Q4012.46 736 3971.46 725Q3930.46 714 3900.96 693Q3871.46 672 3855.46 642Q3839.46 612 3839.46 573Q3839.46 569 3839.96 564.5Q3840.46 560 3841.46 555L3985.46 555Q3985.46 559 3985.46 562.5Q3985.46 566 3985.46 569Q3985.46 589 3995.96 602.5Q4006.46 616 4024.46 623Q4042.46 630 4065.46 630Q4082.46 630 4099.96 625.5Q4117.46 621 4128.96 610.5Q4140.46 600 4140.46 582Q4140.46 560 4123.96 548Q4107.46 536 4080.46 528Q4053.46 520 4021.46 512Q3991.46 504 3961.46 493Q3931.46 482 3905.96 464.5Q3880.46 447 3864.96 419.5Q3849.46 392 3849.46 350Q3849.46 305 3866.96 273.5Q3884.46 242 3914.96 222.5Q3945.46 203 3984.96 194Q4024.46 185 4069.46 185Q4112.46 185 4149.46 193.5Q4186.46 202 4215.96 220Q4245.46 238 4261.96 265.5Q4278.46 293 4278.46 330Q4278.46 335 4277.96 341.5Q4277.46 348 4277.46 353L4134.46 353L4134.46 341Q4134.46 324 4125.46 313Q4116.46 302 4100.96 296Q4085.46 290 4065.46 290Q4052.46 290 4040.96 293Q4029.46 296 4019.46 301Q4009.46 306 4003.96 314Q3998.46 322 3998.46 334Q3998.46 350 4010.46 361Q4022.46 372 4044.96 378.5Q4067.46 385 4092.46 393Q4124.46 400 4159.46 409.5Q4194.46 419 4224.96 435Q4255.46 451 4273.96 480Q4292.46 509 4292.46 558Q4292.46 606 4274.46 640.5Q4256.46 675 4225.46 696Q4194.46 717 4152.96 726.5Q4111.46 736 4063.46 736Z"/></symbol></svg>
+
+<section class="slide dark s1" id="s1"><svg class="ringbg" viewBox="0 0 100 100"><defs><mask id="gbg" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#gbg)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><div class="top"><span class="logo"><svg class="mark" viewBox="4 4 92 92"><defs><mask id="g1" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g1)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><svg class="word" viewBox="0 0 3309.7 724"><use href="#wm"/></svg></span><span class="count"><b>01</b> / 07</span></div>
+  <h1 class="h">Un «&nbsp;pas le budget&nbsp;» n'est pas un&nbsp;non.</h1>
+  <p class="promise">Aucun revenu laissé sur la table.</p>
+  <div class="rule"></div>
+  <div class="foot"><span class="muted">Agence d'affiliation<br>pour business high-ticket</span><span class="swipe">Glissez <i>→</i></span></div>
+</section>
+
+<section class="slide s2" id="s2"><div class="top"><span class="logo"><svg class="mark" viewBox="4 4 92 92"><defs><mask id="g2" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g2)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><svg class="word" viewBox="0 0 3309.7 724"><use href="#wm"/></svg></span><span class="count"><b>02</b> / 07</span></div>
+  <p class="eyebrow" style="margin-top:96px">Le problème</p>
+  <div class="big">80&nbsp;%</div>
+  <p class="h">des leads en appel de vente repartent sans rien acheter.</p>
+  <div class="rule"></div>
+  <p class="body muted">Dont <b style="color:var(--encre)">70&nbsp;%</b> pour une question de budget.</p>
+</section>
+
+<section class="slide s3" id="s3"><div class="top"><span class="logo"><svg class="mark" viewBox="4 4 92 92"><defs><mask id="g3" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g3)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><svg class="word" viewBox="0 0 3309.7 724"><use href="#wm"/></svg></span><span class="count"><b>03</b> / 07</span></div>
+  <p class="eyebrow" style="margin-top:96px">Ce que ça vous coûte</p>
+  <h2 class="h" style="margin-top:0">Vous avez payé pour les faire venir.</h2>
+  <ul class="costs"><li>Publicité <span>payé</span></li><li>Contenu <span>payé</span></li><li>Temps de closing <span>payé</span></li></ul>
+  <p class="body">Le mois suivant, ils achètent une formation moins chère. <span class="muted">Chez quelqu'un d'autre, qui touche la commission à votre&nbsp;place.</span></p>
+</section>
+
+<section class="slide craie s4" id="s4"><div class="top"><span class="logo"><svg class="mark" viewBox="4 4 92 92"><defs><mask id="g4" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g4)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><svg class="word" viewBox="0 0 3309.7 724"><use href="#wm"/></svg></span><span class="count"><b>04</b> / 07</span></div>
+  <h2 class="h">Une boucle, pas un entonnoir.</h2>
+  <ol class="steps"><li class=""><span class="n">01</span><div><h3>Lead</h3><p>Il a vu votre contenu, il a rempli le formulaire.</p></div></li><li class=""><span class="n">02</span><div><h3>Qualification</h3><p>Il vous dit s'il a le budget.</p></div></li><li class="hot"><span class="n">03</span><div><h3>«&nbsp;Pas le budget&nbsp;»</h3><p>Aujourd'hui, il disparaît ici.</p></div></li><li class=""><span class="n">04</span><div><h3>Offre low-ticket</h3><p>Une offre à sa portée, présentée par nos setters.</p></div></li><li class=""><span class="n">05</span><div><h3>Vente encaissée</h3><p>Vous gardez au moins 65&nbsp;%.</p></div></li><li class=""><span class="n">06</span><div><h3>Nurturing</h3><p>Il reste dans votre écosystème.</p></div></li><li class=""><span class="n">07</span><div><h3>Upsell high-ticket</h3><p>Il revient. Cette fois, avec le budget.</p></div></li></ol>
+</section>
+
+<section class="slide s5" id="s5"><div class="top"><span class="logo"><svg class="mark" viewBox="4 4 92 92"><defs><mask id="g5" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g5)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><svg class="word" viewBox="0 0 3309.7 724"><use href="#wm"/></svg></span><span class="count"><b>05</b> / 07</span></div>
+  <h2 class="h">Zéro coût d'entrée.</h2>
+  <p class="promise">On gagne seulement si vous gagnez.</p>
+  <div class="split">
+    <div class="c"><svg viewBox="4 4 92 92"><circle cx="50" cy="50" r="38" fill="none" stroke="rgba(107,102,96,.2)" stroke-width="16"/><g transform="rotate(-90 50 50)"><circle cx="50" cy="50" r="38" fill="none" stroke="#121212" stroke-width="16" pathLength="100" stroke-dasharray="65 100"/><circle cx="50" cy="50" r="38" fill="none" stroke="#D2401C" stroke-width="16" pathLength="100" stroke-dasharray="35 100" stroke-dashoffset="-65"/></g></svg>
+      <div class="center"><b>65&nbsp;%</b><span>pour vous, sur chaque vente</span></div></div>
+    <ul class="legend"><li><i style="background:var(--encre)"></i><div>Vous<small>Rien à recruter ni à gérer.</small></div></li><li><i style="background:var(--v)"></i><div>Loseless et setters<small>Si ça ne vend pas, on ne gagne rien.</small></div></li></ul>
+  </div>
+</section>
+
+<section class="slide dark s6" id="s6"><div class="top"><span class="logo"><svg class="mark" viewBox="4 4 92 92"><defs><mask id="g6" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g6)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><svg class="word" viewBox="0 0 3309.7 724"><use href="#wm"/></svg></span><span class="count"><b>06</b> / 07</span></div>
+  <h2 class="h">Déjà en place chez Gaspard Grosjean.</h2>
+  <p class="body muted" style="margin-top:28px;font-size:30px">Fondateur d'ECOM&nbsp;BOSS.</p>
+  <ul class="stats">
+    <li><b>60&#8239;000&nbsp;€</b><span>de chiffre d'affaires<br>généré</span></li>
+    <li><b>300</b><span>ventes<br>low-ticket</span></li>
+    <li><b>30<small>&nbsp;jours</small></b><span>pour y arriver</span></li>
+  </ul>
+  <div class="rule" style="margin-top:0"></div>
+  <div class="foot"><span class="pill"><i></i>Affilié Base44</span></div>
+</section>
+
+<section class="slide dark s7" id="s7"><svg class="ringbig" viewBox="0 0 100 100"><defs><mask id="g7b" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g7b)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><div class="top"><span class="logo"><svg class="mark" viewBox="4 4 92 92"><defs><mask id="g7" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120"><rect x="-10" y="-10" width="120" height="120" fill="#fff"/><circle cx="76.87" cy="23.13" r="16" fill="#000"/></mask></defs><circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" mask="url(#g7)"/><circle cx="76.87" cy="23.13" r="13" fill="#D2401C"/></svg><svg class="word" viewBox="0 0 3309.7 724"><use href="#wm"/></svg></span><span class="count"><b>07</b> / 07</span></div>
+  <h2 class="h">Fermez la boucle.</h2>
+  <p class="body muted">Vous vendez un accompagnement high&#8209;ticket&nbsp;? Un appel suffit pour savoir si Loseless est fait pour vous.</p>
+  <span class="cta">Réserver un appel · lien en bio</span>
+</section>
+</body></html>

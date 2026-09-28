@@ -58,6 +58,13 @@
   const motion = root.classList.contains('motion') && hasGsap && !!window.Lenis;
   if (!motion) root.classList.remove('motion');
 
+  // Déclencheur d'apparition : par défaut sur l'élément ; une section avec data-reveal-start
+  // (ex. le bandeau de chiffres, caché sous le hero pendant son retrait) impose le sien.
+  const revealAt = (el, start) => {
+    const host = el.closest('[data-reveal-start]');
+    return host ? { trigger: host, start: host.dataset.revealStart, once: true } : { trigger: el, start, once: true };
+  };
+
   let lenis = null;
   let refreshTimer = 0;
   const refresh = () => {
@@ -241,15 +248,16 @@
       if (!raw || Number.isNaN(n)) return; // placeholder conservé
       const decimals = (raw.split(/[.,]/)[1] || '').length;
       const f = new Intl.NumberFormat(LOCALE, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+      const prefix = el.dataset.prefix || '';
       const suffix = el.dataset.suffix || '';
-      const out = v => { el.textContent = f.format(v) + suffix; };
+      const out = v => { el.textContent = prefix + f.format(v) + suffix; };
 
       if (!motion) { out(n); return; }
       const o = { v: 0 };
       out(0);
       gsap.to(o, {
         v: n, duration: 1.6, onUpdate: () => out(o.v),
-        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+        scrollTrigger: revealAt(el, 'top 85%'),
       });
     });
   }
@@ -437,22 +445,57 @@
     const ring = $('.loader__ring'), dot = $('.loader__dot'), gap = $('.loader__gap');
     const target = $('.site-header .mark');
     const word = $('.site-header .logo__word');
+    const kicker = $('.intro__kicker'), barsBox = $('.intro__bars');
+    const figs = $$('.intro__fig'), nums = $$('.intro__num'), bars = $$('.intro__bars b');
+    const skip = $('.intro-skip');
 
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
     lenis.stop();
 
+    const numText = (el, v) => (el.dataset.prefix || '') + fmt.format(Math.round(v)) + (el.dataset.suffix || '');
+
     gsap.set(target, { autoAlpha: 0 });
     gsap.set(word, { autoAlpha: 0, x: -10 });
-    gsap.set(ring, { strokeDasharray: '100 100', strokeDashoffset: 100 });
-    gsap.set(dot, { scale: 0, y: -34, transformOrigin: '50% 50%' });
-    gsap.set(gap, { attr: { r: 0 } });
-    gsap.set(mark, { visibility: 'visible' });
+    // 1. le logo complet « pop » au centre
+    gsap.set(ring, { strokeDasharray: '100 100', strokeDashoffset: 0 });
+    gsap.set(dot, { scale: 1, y: 0, transformOrigin: '50% 50%' });
+    gsap.set(gap, { attr: { r: 16 } });
+    gsap.set(mark, { visibility: 'visible', scale: 0.4, autoAlpha: 0 });
+    gsap.set([kicker, barsBox], { autoAlpha: 0 });
+    gsap.set(figs, { autoAlpha: 0, y: 28 });
 
     const tl = gsap.timeline();
-    tl.to(ring, { strokeDashoffset: 0, duration: 0.62 }, 0.04)
-      .to(dot, { scale: 1, y: 0, duration: 0.5 }, 0.34)
-      .to(gap, { attr: { r: 16 }, duration: 0.5 }, 0.34)
+    tl.to(mark, { scale: 1, autoAlpha: 1, duration: 0.6 }, 0.05)
+      .to(dot, { scale: 1.22, duration: 0.2, ease: 'power2.out' }, 0.45)
+      .to(dot, { scale: 1, duration: 0.35 }, 0.65)
+      .to(mark, { scale: 0.6, autoAlpha: 0, duration: 0.35, ease: 'power2.in' }, 0.95)
+      .to([kicker, barsBox], { autoAlpha: 1, duration: 0.5 }, 1.05);
+
+    // 2. les chiffres, un par un, avec une barre de progression façon « story »
+    let t = 1.2;
+    figs.forEach((fig, i) => {
+      const n = nums[i], o = { v: 0 };
+      tl.to(fig, { autoAlpha: 1, y: 0, duration: 0.5 }, t)
+        .fromTo(o, { v: 0 }, {
+          v: +n.dataset.to, duration: 0.85, immediateRender: false,
+          onUpdate: () => { n.textContent = numText(n, o.v); },
+        }, t)
+        .fromTo(bars[i], { scaleX: 0 }, { scaleX: 1, duration: 1.15, ease: 'none' }, t)
+        .to(fig, { autoAlpha: 0, y: -28, duration: 0.3, ease: 'power2.in' }, t + 0.9);
+      t += 1.2;
+    });
+    tl.to([kicker, barsBox, skip], { autoAlpha: 0, duration: 0.3 }, t - 0.3);
+
+    // 3. l'intro d'origine : l'anneau se dessine, le point se pose, le logo rejoint le header
+    const P = t;
+    tl.set(ring, { strokeDashoffset: 100 }, P)
+      .set(dot, { scale: 0, y: -34 }, P)
+      .set(gap, { attr: { r: 0 } }, P)
+      .set(mark, { scale: 1, autoAlpha: 1 }, P)
+      .to(ring, { strokeDashoffset: 0, duration: 0.62 }, P + 0.04)
+      .to(dot, { scale: 1, y: 0, duration: 0.5 }, P + 0.34)
+      .to(gap, { attr: { r: 16 }, duration: 0.5 }, P + 0.34)
       .add(() => {
         const a = mark.getBoundingClientRect();
         const b = target.getBoundingClientRect();
@@ -462,17 +505,30 @@
           scale: b.width / a.width,
           duration: 0.42,
         });
-      }, 0.76)
-      .to(loader, { backgroundColor: 'rgba(18,18,18,0)', duration: 0.38, ease: 'none' }, 0.8)
-      .add(heroIn, 0.72)
+      }, P + 0.76)
+      .to(loader, { backgroundColor: 'rgba(18,18,18,0)', duration: 0.38, ease: 'none' }, P + 0.8)
+      .add(heroIn, P + 0.72)
       .add(() => {
         gsap.set(target, { autoAlpha: 1 });
         loader.remove();
+        skip.remove();
         lenis.start();
-      }, 1.2)
-      .to(word, { autoAlpha: 1, x: 0, duration: 0.7 }, 1.12);
+      }, P + 1.2)
+      .to(word, { autoAlpha: 1, x: 0, duration: 0.7 }, P + 1.12);
+
+    // « Passer » (ou Échap) : on saute directement à l'animation du logo
+    const skipIntro = () => {
+      if (tl.time() >= P) return;
+      skip.hidden = true;
+      tl.seek(P);
+      document.removeEventListener('keydown', onKey);
+    };
+    const onKey = e => { if (e.key === 'Escape') skipIntro(); };
+    skip.addEventListener('click', skipIntro);
+    document.addEventListener('keydown', onKey);
     return tl;
   }
+
 
   function heroIn() {
     const split = SplitText.create('.hero__title', { type: 'words', mask: 'words' });
@@ -519,7 +575,7 @@
       },
     });
     tl.to(ring, { rotation: -140, duration: 1 }, 0)
-      .to(st, { p: 1, duration: 1 }, 0)
+      .to(st, { p: 1, duration: 0.82 }, 0)
       .to(inner, { yPercent: -6, autoAlpha: 0, duration: 0.45 }, 0.02)
       .to(dot, { scale: 0, transformOrigin: '50% 50%', duration: 0.3 }, 0.3);
   }
@@ -705,20 +761,20 @@
         type: 'lines', mask: 'lines', linesClass: 'split-line', autoSplit: true,
         onSplit: self => gsap.from(self.lines, {
           yPercent: 112, duration: 1.1, stagger: 0.08,
-          scrollTrigger: { trigger: el, start: 'top 86%', once: true },
+          scrollTrigger: revealAt(el, 'top 86%'),
         }),
       });
     });
     $$('[data-fade]').forEach(el => {
       gsap.from(el, {
         autoAlpha: 0, y: 20, duration: 1,
-        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+        scrollTrigger: revealAt(el, 'top 88%'),
       });
     });
     $$('[data-stagger]').forEach(el => {
       gsap.from(el.children, {
         autoAlpha: 0, y: 40, duration: 1.1, stagger: 0.08,
-        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+        scrollTrigger: revealAt(el, 'top 85%'),
       });
     });
   }
