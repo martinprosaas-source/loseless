@@ -64,13 +64,7 @@ INDEX = [
     ('>Calculer ce que je perds</a>', '>See what I’m losing</a>'),
 
     # Chiffres (après le hero)
-    ('<span class="intro__num" data-to="60000" data-suffix="&nbsp;€">60&#8239;000&nbsp;€</span><span class="intro__label">de chiffre d\'affaires généré</span>',
-     '<span class="intro__num" data-to="60000" data-prefix="€">€60,000</span><span class="intro__label">in revenue generated</span>'),
-    ('<span class="intro__label">ventes low&#8209;ticket conclues</span>', '<span class="intro__label">low&#8209;ticket sales closed</span>'),
-    ('<span class="intro__label">seul partenaire. Et déjà ces résultats.</span>', '<span class="intro__label">partner so far. And already these results.</span>'),
-    ('<button class="intro-skip" type="button">Passer</button>', '<button class="intro-skip" type="button">Skip</button>'),
-    ('<span class="figures__t-full">Loseless en chiffres</span><span class="figures__t-light">Déjà en place</span>',
-     '<span class="figures__t-full">Loseless in numbers</span><span class="figures__t-light">Already live</span>'),
+    ('>Loseless en chiffres</h2>', '>Loseless in numbers</h2>'),
     ('Affilié Base44</p>', 'Base44 affiliate</p>'),
     ('<span data-count="60000" data-suffix="&nbsp;€">60&#8239;000&nbsp;€</span>',
      '<span data-count="60000" data-prefix="€">€60,000</span>'),

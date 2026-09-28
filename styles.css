@@ -216,64 +216,6 @@ html.motion .loader {
 .loader__mark { width: 104px; height: 104px; overflow: visible; position: relative; }
 html.motion .loader__mark { visibility: hidden; }
 
-/* Intro : les chiffres en plein écran, avant l'animation du logo */
-.intro { display: none; }
-html.motion .intro {
-  display: block;
-  position: absolute; inset: 0;
-  pointer-events: none;
-}
-/* le logo complet, en haut de l'écran pendant les chiffres */
-.intro__kicker.logo {
-  --h: clamp(26px, 2.6vw, 36px);
-  position: absolute; left: 50%; top: 14vh;
-  transform: translateX(-50%);
-  color: var(--papier);
-}
-.intro__stage { position: absolute; inset: 0; display: grid; place-items: center; }
-.intro__fig { grid-area: 1 / 1; text-align: center; padding: 0 var(--gutter); }
-.intro__num {
-  display: block;
-  font: 800 clamp(84px, 15vw, 232px)/.9 var(--sans);
-  letter-spacing: -.05em;
-  font-variant-numeric: tabular-nums;
-  color: var(--papier);
-  white-space: nowrap;
-}
-html[lang="en"] .intro__num { font-variant-numeric: normal; }
-.intro__label {
-  display: block;
-  margin-top: 22px;
-  font: 700 clamp(17px, 1.6vw, 22px)/1.3 var(--sans);
-  letter-spacing: -.01em;
-  color: rgba(230, 226, 218, .72);
-}
-.intro__bars {
-  position: absolute; left: 50%; bottom: 14vh;
-  display: flex; gap: 8px;
-  transform: translateX(-50%);
-}
-.intro__bars i { position: relative; width: 44px; height: 2px; background: rgba(244, 242, 238, .2); overflow: hidden; }
-.intro__bars b { position: absolute; inset: 0; background: var(--papier); transform: scaleX(0); transform-origin: left center; }
-.intro-skip { display: none; }
-html.motion .intro-skip {
-  display: inline-flex;
-  position: fixed; right: var(--gutter); bottom: 32px; z-index: 91;
-  padding: 11px 18px;
-  border: 0; border-radius: 999px;
-  background: transparent;
-  box-shadow: inset 0 0 0 1px rgba(244, 242, 238, .3);
-  color: var(--papier);
-  font: 700 13px/1 var(--sans);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: box-shadow .4s var(--ease);
-}
-html.motion .intro-skip:hover { box-shadow: inset 0 0 0 1px rgba(244, 242, 238, .7); }
-html.motion .intro-skip:focus-visible { outline: 2px solid var(--vermillon); outline-offset: 4px; }
-html.motion .intro-skip[hidden] { display: none; }
-
 /* ---------- Curseur ---------- */
 
 .cursor { display: none; }
@@ -499,19 +441,6 @@ html[lang="en"] .lang:has(.lang__opt:not([aria-current]):hover) .lang__thumb { t
 }
 
 /* ---------- Chiffres (après le hero) ---------- */
-/* Avec animations, les chiffres ont déjà été présentés dans l'intro :
-   le bandeau garde le contexte et le bouton, les chiffres restent lisibles par les lecteurs d'écran. */
-.figures__t-light { display: none; }
-html.motion .figures__t-full { display: none; }
-html.motion .figures__t-light { display: inline; }
-html.motion .figures__list {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  overflow: hidden; clip: rect(0 0 0 0);
-  white-space: nowrap; border: 0;
-}
-html.motion .figures__top { border-bottom: 1px solid rgba(18, 18, 18, .14); }
-html.motion .figures__foot { padding-bottom: 28px; border-bottom: 1px solid rgba(18, 18, 18, .14); }
 
 .figures { position: relative; z-index: 1; padding: clamp(88px, 14vh, 150px) 0 clamp(40px, 6vh, 72px); }
 .figures__top {
