@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/app", "destination": "https://loseless-outil-interne.vercel.app/app" },
+    { "source": "/app/", "destination": "https://loseless-outil-interne.vercel.app/app/" },
+    { "source": "/app/:path+", "destination": "https://loseless-outil-interne.vercel.app/app/:path+" }
+  ]
+}
