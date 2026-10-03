@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# fichiers de travail des films motion (lourds, pas publiés)
+social/motion-*/

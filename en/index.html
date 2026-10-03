@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="../styles.css?v=202609271958">
+<link rel="stylesheet" href="../styles.css?v=202610022215">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 </head>
 <body>
@@ -62,7 +62,7 @@
       <svg class="logo__word" viewBox="0 0 3309.7 724" aria-hidden="true" focusable="false"><use href="#lossless-wordmark"/></svg>
     </a>
     <nav class="nav" aria-label="Main navigation">
-      <a class="link" href="#boucle">The loop</a>
+      <a class="link" href="#boucle">How it works</a>
       <a class="link" href="#simulateur">Simulator</a>
       <a class="link" href="#modele">The model</a>
       <a class="link" href="#faq">FAQ</a>
@@ -100,12 +100,21 @@
       <h1 class="hero__title">Your <span class="nobr">“no budget”</span> leads<br class="br-desk"> still pay.</h1>
       <div class="hero__bottom">
         <div class="hero__copy">
-          <p class="hero__promise promise">Every lead gets tagged. Every no becomes a commission.</p>
-          <p class="hero__text">After every call, your leads are sorted automatically. Those who can’t afford your program get a partner offer within their budget. You earn the commission, and they come back to your program when they’re ready.</p>
+          <p class="hero__promise promise">We build your low-ticket offer. Our setters sell it. You get paid.</p>
+          <p class="hero__text">Leads who can’t afford your program no longer leave empty-handed. Our setters call them back and offer them something within their budget, under your name. You get 65% of every sale, with nothing to hire or manage.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Book a call">Book a call</span></a>
+            <a class="link link--strong" href="#simulateur">See what I’m losing</a>
+          </div>
         </div>
-        <div class="hero__ctas">
-          <a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Book a call">Book a call</span></a>
-          <a class="link link--strong" href="#simulateur">See what I’m losing</a>
+        <!-- Film: muted loop in the hero; “Turn on sound” restarts it from the beginning, with sound -->
+        <div class="hero__film">
+          <video class="hero__film-video" data-src="../assets/video/film.mp4" poster="../assets/video/film-apercu.jpg" muted loop playsinline preload="none" aria-label="Loseless film (55 seconds, in French)"></video>
+          <span class="hero__film-bar" aria-hidden="true"></span>
+          <button class="hero__film-cta" type="button" data-film-sound aria-pressed="false">
+            <span class="hero__film-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="i-off" d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="i-on" d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <span class="hero__film-label" data-on="Mute" data-off="Turn on sound (French)">Turn on sound (French)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -121,7 +130,7 @@
       <ul class="figures__list" data-stagger>
         <li class="figure">
           <span class="figure__num"><span data-count="60000" data-prefix="€">€60,000</span></span>
-          <span class="figure__label">in revenue generated</span>
+          <span class="figure__label">in sales generated in 30&nbsp;days</span>
         </li>
         <li class="figure">
           <span class="figure__num"><span data-count="300">300</span></span>
@@ -148,11 +157,12 @@
       <div class="problem__copy">
         <p class="eyebrow" data-fade>01 — The problem</p>
         <h2 id="t-probleme" class="h2 problem__title" data-split><span class="nobr">“No budget”</span> doesn’t mean&nbsp;no.</h2>
-        <!-- Valeurs X et Y : constante PROBLEME_STATS en haut de main.js -->
+        <!-- Valeur X : constante PROBLEME_STATS en haut de main.js -->
         <p class="stat" data-fade>
           <span class="stat__num" data-count="" data-suffix="%">80%</span>
-          <span class="stat__label">of leads on sales calls leave without buying anything, <span class="stat__y">70%</span> of them because of budget.</span>
+          <span class="stat__label">of leads on sales calls leave without buying anything. And price is one of the top reasons they say no.</span>
         </p>
+        <p class="stat__source" data-fade>Average close rate of 20%, across all industries. Source: HubSpot, 2024.</p>
         <p class="body" data-fade>You paid to bring them in: ads, content, closing time. When they say “no budget”, the call ends and your whole investment walks out the door with them. The next month, they buy a cheaper course. From someone else, who pockets the commission instead of you.</p>
       </div>
 
@@ -253,7 +263,7 @@
           <div class="curtain__cell curtain__cell--after" aria-hidden="true">
             <p class="curtain__label">The no-budget lead</p>
             <p class="curtain__big">They buy.</p>
-            <p class="curtain__text">Your low&#8209;ticket offer, pitched by our setters.</p>
+            <p class="curtain__text">An offer within their budget, built for your audience and pitched by our setters.</p>
           </div>
           <div class="curtain__cell curtain__cell--before">
             <p class="curtain__label">Your revenue</p>
@@ -289,7 +299,7 @@
           <div class="curtain__cell curtain__cell--after">
             <p class="curtain__label">The no-budget lead</p>
             <p class="curtain__big">They buy.</p>
-            <p class="curtain__text">Your low&#8209;ticket offer, pitched by our setters.</p>
+            <p class="curtain__text">An offer within their budget, built for your audience and pitched by our setters.</p>
           </div>
           <div class="curtain__cell curtain__cell--before" aria-hidden="true">
             <p class="curtain__label">Your revenue</p>
@@ -335,7 +345,7 @@
             <span class="step__node" aria-hidden="true"></span>
             <span class="step__num">01</span>
             <h3>Scoping</h3>
-            <p>We study your ecosystem: your audience, your leads, your high-ticket offer. Together, we define your low-ticket offer and the budget threshold that triggers the redirect.</p>
+            <p>We study your audience, your leads and your high-ticket offer. Then we build your low-ticket offer: the offer, the page and the video. You approve everything.</p>
           </li>
           <li class="step">
             <span class="step__node" aria-hidden="true"></span>
@@ -347,7 +357,7 @@
             <span class="step__node" aria-hidden="true"></span>
             <span class="step__num">03</span>
             <h3>Launch</h3>
-            <p>Our setters call every lead and close the sales. Want to speed things up? One story with the link is all it takes.</p>
+            <p>Our setters, hired, trained and managed by us, call every lead and close the sales. Want to speed things up? One story with the link is all it takes.</p>
           </li>
           <li class="step">
             <span class="step__node" aria-hidden="true"></span>
@@ -389,7 +399,7 @@
         <div class="sim__grid-dots" id="sim-dots" aria-hidden="true"></div>
         <p class="sim__legend" id="sim-legend" hidden>1 dot = 5 leads</p>
         <p class="sim__sub">Every orange dot is someone who wanted your program. Today, they leave without buying anything.</p>
-        <p class="sim__hook">How much could they bring in? It depends on your audience and your offer. We’ll work it out with you, using your real numbers.</p>
+        <p class="sim__hook">How much could they bring in? At ECOM&nbsp;BOSS, these leads generated €60,000 in sales in 30&nbsp;days. We’ll work out your potential with you, using your real numbers.</p>
         <p class="sim__cta"><a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Calculate my potential">Calculate my potential</span></a></p>
         <p class="sr-only" id="sim-live" aria-live="polite"></p>
       </div>
@@ -440,14 +450,14 @@
           <p class="model__center"><span class="model__big">65%</span><span class="model__small">for you, on every sale</span></p>
           <div class="model__legend">
             <span class="model__tag model__tag--you">You</span>
-            <span class="model__tag model__tag--us">loseless<br class="br-desk"> &amp; setters</span>
+            <span class="model__tag model__tag--us">Loseless<br class="br-desk"> &amp; setters</span>
           </div>
         </div>
         <figcaption class="sr-only">Nothing to pay to get started. After that, on every sale: 65% for you, 35% for loseless and the setters.</figcaption>
       </figure>
 
       <dl class="model__rows" data-stagger>
-        <div><dt>What we handle</dt><dd>The page, the video, the setters and the follow-up. Nothing for you to hire or manage.</dd></div>
+        <div><dt>What we handle</dt><dd>The offer, the page, the video, hiring and managing the setters, and the follow-up. Nothing for you to hire or manage.</dd></div>
         <div><dt>Your brand</dt><dd>The offer is sold under your name. You approve everything before launch: the offer, the page and the setters’ script.</dd></div>
         <div><dt>If the offer doesn’t sell</dt><dd>We earn nothing, and you lose nothing.</dd></div>
       </dl>
@@ -455,7 +465,7 @@
   </section>
 
   <!-- 08 — FAQ -->
-  <section class="section faq pre-rise" id="faq" aria-labelledby="t-faq">
+  <section class="section faq" id="faq" aria-labelledby="t-faq">
     <div class="wrap faq__grid">
       <div class="faq__side">
         <div class="faq__head">
@@ -520,6 +530,17 @@
     </div>
   </section>
 
+  <!-- 09 — POUR QUI -->
+  <section class="section forwho pre-rise" id="pour-qui" aria-labelledby="t-forwho">
+    <div class="wrap forwho__grid">
+      <div>
+        <p class="eyebrow" data-fade>09 — Who it’s for</p>
+        <h2 id="t-forwho" class="h2" data-split>We don’t work with everyone.</h2>
+      </div>
+      <p class="body forwho__text" data-fade>Loseless is for high-ticket businesses doing over €10,000 in monthly revenue. Below that, your lead volume isn’t enough for the system to pay off for you.</p>
+    </div>
+  </section>
+
   <!-- CTA FINAL -->
   <section class="cta rise rise--dark" id="contact" aria-labelledby="t-cta">
     <div class="rise__bg" aria-hidden="true"></div>
@@ -577,6 +598,6 @@
 <script src="../vendor/SplitText.min.js" defer></script>
 <script src="../vendor/CustomEase.min.js" defer></script>
 <script src="../vendor/lenis.min.js" defer></script>
-<script src="../main.js?v=202609271958" defer></script>
+<script src="../main.js?v=202610022215" defer></script>
 </body>
 </html>

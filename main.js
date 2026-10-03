@@ -18,10 +18,9 @@
     leadsParPoint: 5,
   };
 
-  // Section 01 — chiffres du bloc « [X %] … dont [Y %] ».
-  // x : part des leads en appel qui repartent sans rien acheter ; y : part d'entre eux pour une question de budget (en %).
+  // Section 01 — grand chiffre « [X %] des leads en appel repartent sans rien acheter ».
   // Mettre null pour réafficher le placeholder.
-  const PROBLEME_STATS = { x: 80, y: 70 };
+  const PROBLEME_STATS = { x: 80 };
 
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
@@ -82,9 +81,8 @@
   }
 
   function applyProblemStats() {
-    const { x, y } = PROBLEME_STATS;
+    const { x } = PROBLEME_STATS;
     if (typeof x === 'number') $('.problem .stat__num').dataset.count = String(x);
-    if (typeof y === 'number') $('.problem .stat__y').textContent = pct(fmt.format(y));
   }
 
   // ---------------------------------------------------------------
@@ -491,6 +489,7 @@
     gsap.from(['.hero__tag', '.hero__promise', '.hero__text', '.hero__ctas'], {
       autoAlpha: 0, y: 20, duration: 1, stagger: 0.08, delay: 0.3,
     });
+    gsap.from('.hero__film', { autoAlpha: 0, y: 40, scale: 0.96, duration: 1.3, delay: 0.4 });
     gsap.fromTo('.hero__stroke', { strokeDasharray: '100 100', strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 1.2 });
     gsap.from('.hero__ring svg', { rotation: -50, duration: 1.2 });
     gsap.from('.hero__dot-in', { scale: 0, transformOrigin: '50% 50%', duration: 0.9, delay: 0.45 });
@@ -501,12 +500,20 @@
   function heroScroll() {
     const hero = $('.hero'), dot = $('.hero__dot'), ring = $('.hero__ring'), svg = $('.hero__ring svg'), inner = $('.hero__inner');
     const st = { p: 0 };
-    let tl = null;
+    let tl = null, leaving = false;
+    // signale le début / la fin du retrait (le film muet se met en pause pendant le retrait)
+    const flag = () => {
+      const l = st.p > 0.01;
+      if (l === leaving) return;
+      leaving = l;
+      document.dispatchEvent(new CustomEvent('hero:leaving', { detail: l }));
+    };
 
     // Le cercle se referme vers l'emplacement du point vermillon ; le point, lui,
     // disparaît pendant le retrait pour ne pas rester posé sur la section 01.
     const clip = () => {
       const trig = tl && tl.scrollTrigger;
+      flag();
       if (!trig || trig.progress < 0.0005) { hero.style.clipPath = ''; return; }
       const h = hero.getBoundingClientRect();
       const rr = ring.getBoundingClientRect();
@@ -523,7 +530,8 @@
       defaults: { ease: 'none' },
       onUpdate: clip,
       scrollTrigger: {
-        trigger: hero, start: 'top top', end: '+=100%',
+        // « bottom bottom » : si le hero dépasse l'écran (mobile), on le lit en entier avant le retrait
+        trigger: hero, start: 'bottom bottom', end: '+=100%',
         pin: true, pinSpacing: false, scrub: true,
         onRefresh: () => clip(),
       },
@@ -886,10 +894,74 @@
   }
 
   // ---------------------------------------------------------------
+  // Film du hero : boucle muette chargée après l'intro ;
+  // « Activer le son » le relance au début avec le son, dans la même carte.
+  // À la fin du film (ou son coupé), retour à la boucle muette.
+  // ---------------------------------------------------------------
+  function initFilm() {
+    const card = $('.hero__film'), video = $('.hero__film-video'), btn = $('[data-film-sound]');
+    if (!card || !video || !btn) return;
+    const label = $('.hero__film-label', btn), bar = $('.hero__film-bar', card);
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = !!(navigator.connection && navigator.connection.saveData);
+    const autoplay = !reduce && !saveData;
+    let visible = true, leaving = false, sound = false, raf = 0;
+
+    const load = () => { if (!video.getAttribute('src')) video.src = video.dataset.src; };
+    const play = () => { load(); const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+    const tick = () => {
+      raf = 0;
+      if (!sound) return;
+      if (bar && video.duration) bar.style.transform = `scaleX(${video.currentTime / video.duration})`;
+      raf = requestAnimationFrame(tick);
+    };
+    const setSound = on => {
+      sound = on;
+      video.muted = !on;
+      video.loop = !on;
+      card.classList.toggle('is-sound', on);
+      btn.setAttribute('aria-pressed', String(on));
+      label.textContent = on ? label.dataset.on : label.dataset.off;
+      if (on && !raf) tick();
+      if (!on && bar) bar.style.transform = '';
+    };
+
+    btn.addEventListener('click', () => {
+      if (sound) { setSound(false); return; }
+      load();
+      video.currentTime = 0;
+      setSound(true);
+      play();
+    });
+    video.addEventListener('ended', () => {
+      setSound(false);
+      video.currentTime = 0;
+      if (autoplay && visible && !leaving) play();
+    });
+
+    // boucle lancée après l'intro et le chargement de la page, pour ne rien ralentir
+    const kick = () => setTimeout(() => { if (autoplay && visible && !leaving) play(); }, motion ? 1300 : 0);
+    if (document.readyState === 'complete') kick(); else window.addEventListener('load', kick, { once: true });
+
+    // hors de l'écran, ou boucle muette pendant le retrait du hero : pause (scroll plus fluide) ;
+    // au retour : reprise (avec le son s'il était activé)
+    const sync = () => {
+      const run = visible && (sound || (autoplay && !leaving));
+      if (!run) video.pause();
+      else if (video.getAttribute('src') && video.paused) play();
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => { visible = e.isIntersecting; sync(); }).observe(card);
+    }
+    document.addEventListener('hero:leaving', e => { leaving = e.detail; sync(); });
+  }
+
+  // ---------------------------------------------------------------
   // Démarrage
   // ---------------------------------------------------------------
   function start() {
     applyProblemStats();
+    initFilm();
     // avant les animations : la FAQ se replie et change la hauteur de page
     initSim();
     initFaq();

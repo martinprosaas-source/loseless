@@ -25,7 +25,7 @@ COMMON = [
     ('<html lang="fr">', '<html lang="en">'),
     ('<a class="skip" href="#contenu">Aller au contenu</a>', '<a class="skip" href="#contenu">Skip to content</a>'),
     ('aria-label="Navigation principale"', 'aria-label="Main navigation"'),
-    ('>La boucle</a>', '>The loop</a>'),
+    ('>Comment ça marche</a>', '>How it works</a>'),
     ('>Simulateur</a>', '>Simulator</a>'),
     ('>Le modèle</a>', '>The model</a>'),
     ('<nav class="lang" aria-label="Langue">', '<nav class="lang" aria-label="Language">'),
@@ -57,18 +57,23 @@ INDEX = [
      '<p class="hero__tag">Affiliate agency for high-ticket businesses</p>'),
     ('<h1 class="hero__title">Vos «&nbsp;pas le budget&nbsp;»<br class="br-desk"> rapportent aussi.</h1>',
      '<h1 class="hero__title">Your <span class="nobr">“no budget”</span> leads<br class="br-desk"> still pay.</h1>'),
-    ('Chaque lead est étiqueté, chaque refus devient une commission.',
-     'Every lead gets tagged. Every no becomes a commission.'),
-    ('Après chaque appel, vos leads sont triés automatiquement. Ceux qui n\'ont pas le budget reçoivent une offre partenaire à leur portée. Vous touchez la commission, et ils reviennent vers votre accompagnement quand ils sont prêts.',
-     'After every call, your leads are sorted automatically. Those who can’t afford your program get a partner offer within their budget. You earn the commission, and they come back to your program when they’re ready.'),
+    ('On construit votre offre low-ticket. Nos setters la vendent. Vous encaissez.</p>',
+     'We build your low-ticket offer. Our setters sell it. You get paid.</p>'),
+    ('Les leads qui n\'ont pas le budget pour votre accompagnement ne repartent plus les mains vides. Nos setters les rappellent et leur proposent une offre à leur portée, sous votre nom. Vous touchez 65&nbsp;% de chaque vente, sans rien recruter ni gérer.',
+     'Leads who can’t afford your program no longer leave empty-handed. Our setters call them back and offer them something within their budget, under your name. You get 65% of every sale, with nothing to hire or manage.'),
     ('>Calculer ce que je perds</a>', '>See what I’m losing</a>'),
+    ('<!-- Film : boucle muette dans le hero ; « Activer le son » le relance au début, avec le son -->',
+     '<!-- Film: muted loop in the hero; “Turn on sound” restarts it from the beginning, with sound -->'),
+    ('aria-label="Film Loseless (55 secondes)"', 'aria-label="Loseless film (55 seconds, in French)"'),
+    ('data-on="Couper le son" data-off="Activer le son">Activer le son</span>',
+     'data-on="Mute" data-off="Turn on sound (French)">Turn on sound (French)</span>'),
 
     # Chiffres (après le hero)
     ('>Loseless en chiffres</h2>', '>Loseless in numbers</h2>'),
     ('Affilié Base44</p>', 'Base44 affiliate</p>'),
     ('<span data-count="60000" data-suffix="&nbsp;€">60&#8239;000&nbsp;€</span>',
      '<span data-count="60000" data-prefix="€">€60,000</span>'),
-    ('>de chiffre d\'affaires généré</span>', '>in revenue generated</span>'),
+    ('>de ventes générées en 30&nbsp;jours</span>', '>in sales generated in 30&nbsp;days</span>'),
     ('>ventes low&#8209;ticket conclues</span>', '>low&#8209;ticket sales closed</span>'),
     ('>seul partenaire. Et déjà ces résultats.</span>', '>partner so far. And already these results.</span>'),
     ('Avec notre premier partenaire, Gaspard Grosjean, fondateur d\'ECOM&nbsp;BOSS.',
@@ -83,8 +88,10 @@ INDEX = [
      '<span class="nobr">“No budget”</span> doesn’t mean&nbsp;no.'),
     ('<span class="stat__num" data-count="" data-suffix="&nbsp;%">80&nbsp;%</span>',
      '<span class="stat__num" data-count="" data-suffix="%">80%</span>'),
-    ('des leads en appel de vente repartent sans rien acheter, dont <span class="stat__y">70&nbsp;%</span> pour une question de budget.',
-     'of leads on sales calls leave without buying anything, <span class="stat__y">70%</span> of them because of budget.'),
+    ('des leads en appel de vente repartent sans rien acheter. Et le prix est l\'une des premières raisons de refus.',
+     'of leads on sales calls leave without buying anything. And price is one of the top reasons they say no.'),
+    ('Taux de closing moyen de 20&nbsp;%, tous secteurs confondus. Source&nbsp;: HubSpot, 2024.',
+     'Average close rate of 20%, across all industries. Source: HubSpot, 2024.'),
     ('Vous avez payé pour les faire venir&nbsp;: publicité, contenu, temps de closing. Quand ils disent «&nbsp;pas le budget&nbsp;», l\'appel se termine et tout cet investissement repart avec eux. Le mois suivant, ils achètent une formation moins chère. Chez quelqu\'un d\'autre, qui touche la commission à votre place.',
      'You paid to bring them in: ads, content, closing time. When they say “no budget”, the call ends and your whole investment walks out the door with them. The next month, they buy a cheaper course. From someone else, who pockets the commission instead of you.'),
     ('>Leads acquis</span>', '>Leads acquired</span>'),
@@ -131,7 +138,7 @@ INDEX = [
     ('<p class="curtain__big">65&nbsp;%</p>', '<p class="curtain__big">65%</p>'),
     ('>Il achète ailleurs.</p>', '>They buy elsewhere.</p>'),
     ('>Il revient chez vous.</p>', '>They come back to&nbsp;you.</p>'),
-    ('Votre offre low&#8209;ticket, présentée par nos setters.', 'Your low&#8209;ticket offer, pitched by our setters.'),
+    ('Une offre à sa portée, construite pour votre audience et présentée par nos setters.', 'An offer within their budget, built for your audience and pitched by our setters.'),
     ('minimum sur chaque vente. Vous n\'avez rien à gérer.', 'minimum on every sale. Nothing for you to manage.'),
     ('Quand il est prêt, pour votre high&#8209;ticket.', 'When they’re ready, for your high&#8209;ticket program.'),
     ('aria-label="Comparer aujourd\'hui et avec loseless"', 'aria-label="Compare today with loseless"'),
@@ -141,12 +148,12 @@ INDEX = [
     # 04 — Installation
     ('04 — Comment on l\'installe', '04 — How we set it up'),
     ('On installe. Vous encaissez.', 'We set it up. You get paid.'),
-    ('<h3>Cadrage</h3>\n            <p>On étudie votre écosystème&nbsp;: votre audience, vos leads, votre offre high-ticket. Ensemble, on définit votre offre low-ticket et le seuil de budget qui déclenche la redirection.</p>',
-     '<h3>Scoping</h3>\n            <p>We study your ecosystem: your audience, your leads, your high-ticket offer. Together, we define your low-ticket offer and the budget threshold that triggers the redirect.</p>'),
+    ('<h3>Cadrage</h3>\n            <p>On étudie votre audience, vos leads et votre offre high-ticket. Puis on construit votre offre low-ticket&nbsp;: l\'offre, la page et la vidéo. Vous validez tout.</p>',
+     '<h3>Scoping</h3>\n            <p>We study your audience, your leads and your high-ticket offer. Then we build your low-ticket offer: the offer, the page and the video. You approve everything.</p>'),
     ('<h3>Branchement</h3>\n            <p>On se branche sur votre formulaire. Sous votre seuil de budget, le lead est redirigé vers votre page low-ticket et sa vidéo, puis transmis directement à nos setters.</p>',
      '<h3>Integration</h3>\n            <p>We plug into your application form. Below your budget threshold, the lead is redirected to your low-ticket page and its video, then handed straight to our setters.</p>'),
-    ('<h3>Lancement</h3>\n            <p>Nos setters appellent chaque lead et concluent les ventes. Si vous voulez accélérer, une story avec le lien suffit.</p>',
-     '<h3>Launch</h3>\n            <p>Our setters call every lead and close the sales. Want to speed things up? One story with the link is all it takes.</p>'),
+    ('<h3>Lancement</h3>\n            <p>Nos setters, recrutés, formés et managés par nous, appellent chaque lead et concluent les ventes. Si vous voulez accélérer, une story avec le lien suffit.</p>',
+     '<h3>Launch</h3>\n            <p>Our setters, hired, trained and managed by us, call every lead and close the sales. Want to speed things up? One story with the link is all it takes.</p>'),
     ('<h3>Suivi et remontée</h3>\n            <p>On suit les résultats avec vous et on ajuste. Les acheteurs prêts pour votre accompagnement vous sont renvoyés.</p>',
      '<h3>Tracking &amp; hand-back</h3>\n            <p>We track the results with you and fine-tune. Buyers who are ready for your program are sent back to you.</p>'),
 
@@ -162,8 +169,8 @@ INDEX = [
     ('1 point = 5 leads', '1 dot = 5 leads'),
     ('Chaque point orange est une personne qui voulait votre accompagnement. Aujourd\'hui, elle repart sans rien acheter.',
      'Every orange dot is someone who wanted your program. Today, they leave without buying anything.'),
-    ('Combien ils pourraient vous rapporter&nbsp;? Ça dépend de votre audience et de votre offre. On le calcule avec vous, sur vos vrais chiffres.',
-     'How much could they bring in? It depends on your audience and your offer. We’ll work it out with you, using your real numbers.'),
+    ('Combien ils pourraient vous rapporter&nbsp;? Chez ECOM&nbsp;BOSS, ces leads ont généré 60&#8239;000&nbsp;€ de ventes en 30&nbsp;jours. On calcule votre potentiel avec vous, sur vos vrais chiffres.',
+     'How much could they bring in? At ECOM&nbsp;BOSS, these leads generated €60,000 in sales in 30&nbsp;days. We’ll work out your potential with you, using your real numbers.'),
     ('data-text="Calculer mon potentiel">Calculer mon potentiel</span>', 'data-text="Calculate my potential">Calculate my potential</span>'),
 
     # 06 — La preuve
@@ -185,11 +192,11 @@ INDEX = [
     ('<span class="model__big">65&nbsp;%</span><span class="model__small">pour vous, sur chaque vente</span>',
      '<span class="model__big">65%</span><span class="model__small">for you, on every sale</span>'),
     ('model__tag--you">Vous</span>', 'model__tag--you">You</span>'),
-    ('loseless<br class="br-desk"> et setters', 'loseless<br class="br-desk"> &amp; setters'),
+    ('Loseless<br class="br-desk"> et setters', 'Loseless<br class="br-desk"> &amp; setters'),
     ('Aucun coût pour démarrer. Ensuite, sur chaque vente&nbsp;: 65&nbsp;% pour vous, 35&nbsp;% pour loseless et les setters.',
      'Nothing to pay to get started. After that, on every sale: 65% for you, 35% for loseless and the setters.'),
-    ('<dt>Ce qu\'on prend en charge</dt><dd>La page, la vidéo, les setters et le suivi. Vous n\'avez rien à recruter ni à gérer.</dd>',
-     '<dt>What we handle</dt><dd>The page, the video, the setters and the follow-up. Nothing for you to hire or manage.</dd>'),
+    ('<dt>Ce qu\'on prend en charge</dt><dd>L\'offre, la page, la vidéo, le recrutement et le management des setters, et le suivi. Vous n\'avez rien à recruter ni à gérer.</dd>',
+     '<dt>What we handle</dt><dd>The offer, the page, the video, hiring and managing the setters, and the follow-up. Nothing for you to hire or manage.</dd>'),
     ('<dt>Votre image</dt><dd>L\'offre est vendue sous votre nom. Vous validez tout avant le lancement&nbsp;: l\'offre, la page et le discours des setters.</dd>',
      '<dt>Your brand</dt><dd>The offer is sold under your name. You approve everything before launch: the offer, the page and the setters’ script.</dd>'),
     ('<dt>Si l\'offre ne vend pas</dt><dd>On ne gagne rien, et vous ne perdez rien.</dd>',
@@ -221,6 +228,12 @@ INDEX = [
      '[TO BE COMPLETED: minimum requirement, e.g. number of leads per month]'),
     ('[À COMPLÉTER]', '[TO BE COMPLETED]'),
 
+    # 09 — Pour qui
+    ('09 — Pour qui', '09 — Who it’s for'),
+    ('On ne travaille pas avec tout le monde.', 'We don’t work with everyone.'),
+    ('Loseless s\'adresse aux business high&#8209;ticket qui font plus de 10&#8239;000&nbsp;€ de CA par mois. En dessous, votre volume de leads ne suffit pas pour que le système soit rentable pour vous.',
+     'Loseless is for high-ticket businesses doing over €10,000 in monthly revenue. Below that, your lead volume isn’t enough for the system to pay off for you.'),
+
     # CTA final
     ('Fermez la boucle.', 'Close the loop.'),
     ('Un appel suffit pour savoir si Loseless est fait pour votre business.',
@@ -250,7 +263,7 @@ BOOK = [
 
 # Liens et chemins : les pages anglaises vivent dans en/
 PATHS = [
-    (r'(href|src)="(styles\.css|main\.js|reserver\.js|favicon\.svg|vendor/)', r'\1="../\2'),
+    (r'(href|src|poster)="(styles\.css|main\.js|reserver\.js|favicon\.svg|vendor/|assets/)', r'\1="../\2'),
 ]
 
 
