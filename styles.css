@@ -444,7 +444,7 @@ html[lang="en"] .lang:has(.lang__opt:not([aria-current]):hover) .lang__thumb { t
   border-radius: clamp(14px, 1.3vw, 22px);
   overflow: hidden;
   isolation: isolate;
-  background: var(--encre) url("assets/video/film-apercu.jpg") center / cover;
+  background: var(--encre) url("assets/video/film-apercu.jpg?v=202610062310") center / cover;
   box-shadow: 0 0 0 1px rgba(244, 242, 238, .12), 0 40px 90px -36px rgba(0, 0, 0, .8);
   /* calque à part : l'ombre n'est pas repeinte pendant le retrait en cercle du hero */
   will-change: transform;
