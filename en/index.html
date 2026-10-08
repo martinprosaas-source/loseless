@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="../styles.css?v=202610062310">
+<link rel="stylesheet" href="../styles.css?v=202610081530">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 </head>
 <body>
@@ -91,8 +91,9 @@
         <g mask="url(#gap-hero)">
           <circle class="hero__stroke" cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" pathLength="100" transform="rotate(-45 50 50)"/>
         </g>
-        <g class="hero__dot-in"><circle class="hero__dot" cx="76.87" cy="23.13" r="13" fill="#D2401C"/></g>
       </svg>
+      <!-- point sur son propre calque : il rétrécit au scroll sans redessiner l'anneau -->
+      <div class="hero__dot-wrap"><svg viewBox="0 0 100 100"><g class="hero__dot-in"><circle class="hero__dot" cx="76.87" cy="23.13" r="13" fill="#D2401C"/></g></svg></div>
     </div>
 
     <div class="wrap hero__inner">
@@ -109,7 +110,7 @@
         </div>
         <!-- Film: muted loop in the hero; “Turn on sound” restarts it from the beginning, with sound -->
         <div class="hero__film">
-          <video class="hero__film-video" data-src="../assets/video/film.mp4?v=202610062310" poster="../assets/video/film-apercu.jpg?v=202610062310" muted loop playsinline preload="none" aria-label="Loseless film (55 seconds, in French)"></video>
+          <video class="hero__film-video" data-src="../assets/video/film.mp4?v=202610081530" poster="../assets/video/film-apercu.jpg?v=202610081530" muted loop playsinline preload="none" aria-label="Loseless film (55 seconds, in French)"></video>
           <span class="hero__film-bar" aria-hidden="true"></span>
           <button class="hero__film-cta" type="button" data-film-sound aria-pressed="false">
             <span class="hero__film-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="i-off" d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="i-on" d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
@@ -598,6 +599,6 @@
 <script src="../vendor/SplitText.min.js" defer></script>
 <script src="../vendor/CustomEase.min.js" defer></script>
 <script src="../vendor/lenis.min.js" defer></script>
-<script src="../main.js?v=202610062310" defer></script>
+<script src="../main.js?v=202610081530" defer></script>
 </body>
 </html>

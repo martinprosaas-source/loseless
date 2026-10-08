@@ -498,32 +498,43 @@
 
   // 1 → 01 : l'Encre se retire en cercle vers le point vermillon
   function heroScroll() {
-    const hero = $('.hero'), dot = $('.hero__dot'), ring = $('.hero__ring'), svg = $('.hero__ring svg'), inner = $('.hero__inner');
+    const hero = $('.hero'), ring = $('.hero__ring'), svg = $('.hero__ring svg'), inner = $('.hero__inner'), dot = $('.hero__dot-wrap');
     const st = { p: 0 };
-    let tl = null, leaving = false;
-    // signale le début / la fin du retrait (le film muet se met en pause pendant le retrait)
+    let tl = null, leaving = false, geo = null, last = '';
+    // signale le début / la fin du retrait : le film muet se met en pause,
+    // le header coupe son flou (recalculé sinon à chaque image sur un fond qui bouge)
     const flag = () => {
       const l = st.p > 0.01;
       if (l === leaving) return;
       leaving = l;
+      root.classList.toggle('hero-leaving', l);
       document.dispatchEvent(new CustomEvent('hero:leaving', { detail: l }));
     };
+    // Géométrie mesurée une fois (chargement, redimensionnement) : aucune lecture de mise en page pendant le scroll.
+    // Centre de l'anneau en coordonnées du hero (la rotation ne déplace pas ce centre).
+    const measure = () => {
+      geo = {
+        cx: ring.offsetLeft + ring.offsetWidth / 2,
+        cy: ring.offsetTop + ring.offsetHeight / 2,
+        d: ring.offsetWidth * 0.38,
+        w: hero.offsetWidth, h: hero.offsetHeight,
+      };
+    };
 
-    // Le cercle se referme vers l'emplacement du point vermillon ; le point, lui,
+    // Le cercle se referme vers l'emplacement du point vermillon ; le point, lui (calque à part),
     // disparaît pendant le retrait pour ne pas rester posé sur la section 01.
     const clip = () => {
       const trig = tl && tl.scrollTrigger;
       flag();
-      if (!trig || trig.progress < 0.0005) { hero.style.clipPath = ''; return; }
-      const h = hero.getBoundingClientRect();
-      const rr = ring.getBoundingClientRect();
+      if (!trig || trig.progress < 0.0005) { if (last) { hero.style.clipPath = ''; last = ''; } return; }
+      if (!geo) measure();
       const a = ((-45 + gsap.getProperty(ring, 'rotation') + gsap.getProperty(svg, 'rotation')) * Math.PI) / 180;
-      const d = ring.offsetWidth * 0.38;
-      const cx = rr.left + rr.width / 2 + d * Math.cos(a) - h.left;
-      const cy = rr.top + rr.height / 2 + d * Math.sin(a) - h.top;
-      const rMax = Math.hypot(Math.max(cx, h.width - cx), Math.max(cy, h.height - cy));
-      const r = rMax * (1 - st.p);
-      hero.style.clipPath = `circle(${r.toFixed(1)}px at ${cx.toFixed(1)}px ${cy.toFixed(1)}px)`;
+      const cx = geo.cx + geo.d * Math.cos(a);
+      const cy = geo.cy + geo.d * Math.sin(a);
+      const rMax = Math.hypot(Math.max(cx, geo.w - cx), Math.max(cy, geo.h - cy));
+      const r = Math.max(0, rMax * (1 - st.p));
+      const v = `circle(${r.toFixed(1)}px at ${cx.toFixed(1)}px ${cy.toFixed(1)}px)`;
+      if (v !== last) { hero.style.clipPath = v; last = v; }
     };
 
     tl = gsap.timeline({
@@ -533,13 +544,14 @@
         // « bottom bottom » : si le hero dépasse l'écran (mobile), on le lit en entier avant le retrait
         trigger: hero, start: 'bottom bottom', end: '+=100%',
         pin: true, pinSpacing: false, scrub: true,
-        onRefresh: () => clip(),
+        onRefreshInit: () => { geo = null; },
+        onRefresh: () => { measure(); clip(); },
       },
     });
     tl.to(ring, { rotation: -140, duration: 1 }, 0)
       .to(st, { p: 1, duration: 0.82 }, 0)
       .to(inner, { yPercent: -6, autoAlpha: 0, duration: 0.45 }, 0.02)
-      .to(dot, { scale: 0, transformOrigin: '50% 50%', duration: 0.3 }, 0.3);
+      .to(dot, { scale: 0, duration: 0.3 }, 0.3);
   }
 
 
