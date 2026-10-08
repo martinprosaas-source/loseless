@@ -387,6 +387,29 @@ html[lang="en"] .lang:has(.lang__opt:not([aria-current]):hover) .lang__thumb { t
   min-height: 100svh;
   overflow: hidden;
 }
+/* Retrait en cercle (main.js, heroScroll). Pendant le retrait seulement, .hero__clip devient un disque
+   centré sur le point vermillon, rétréci par transform, et .hero__stage applique l'échelle inverse pour que
+   le contenu reste immobile. Tout passe par la carte graphique : rien n'est redessiné au scroll
+   (l'ancien clip-path redessinait tout l'écran à chaque image → morceaux rectangulaires sur Safari). */
+/* calques créés dès le chargement (pas au premier scroll) */
+html.motion .hero__clip, html.motion .hero__stage { will-change: transform; }
+.hero.is-exiting { background: transparent; min-height: var(--hero-h); }
+/* le disque ne dessine rien (pas de fond) : simple contour de découpe, quasi gratuit */
+.hero.is-exiting .hero__clip {
+  position: absolute; left: 0; top: 0;
+  width: var(--clip-d); height: var(--clip-d);
+  border-radius: 50%;
+  overflow: hidden;
+  transform-origin: 50% 50%;
+}
+/* le fond Encre est porté par la scène, à la taille du hero */
+.hero.is-exiting .hero__stage {
+  position: absolute; left: 0; top: 0;
+  width: var(--hero-w); height: var(--hero-h);
+  background: var(--encre);
+  transform-origin: 0 0;
+}
+
 .hero__ring {
   --w: min(80vw, 112vh);
   position: absolute;

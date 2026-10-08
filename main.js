@@ -499,8 +499,9 @@
   // 1 → 01 : l'Encre se retire en cercle vers le point vermillon
   function heroScroll() {
     const hero = $('.hero'), ring = $('.hero__ring'), svg = $('.hero__ring svg'), inner = $('.hero__inner'), dot = $('.hero__dot-wrap');
+    const disc = $('.hero__clip'), stage = $('.hero__stage');
     const st = { p: 0 };
-    let tl = null, leaving = false, geo = null, last = '';
+    let tl = null, leaving = false, exiting = false, geo = null;
     // signale le début / la fin du retrait : le film muet se met en pause,
     // le header coupe son flou (recalculé sinon à chaque image sur un fond qui bouge)
     const flag = () => {
@@ -513,28 +514,53 @@
     // Géométrie mesurée une fois (chargement, redimensionnement) : aucune lecture de mise en page pendant le scroll.
     // Centre de l'anneau en coordonnées du hero (la rotation ne déplace pas ce centre).
     const measure = () => {
+      const w = hero.offsetWidth, h = hero.offsetHeight;
       geo = {
         cx: ring.offsetLeft + ring.offsetWidth / 2,
         cy: ring.offsetTop + ring.offsetHeight / 2,
         d: ring.offsetWidth * 0.38,
-        w: hero.offsetWidth, h: hero.offsetHeight,
+        w, h,
       };
+      // rayon du disque à l'échelle 1 = distance du point (position de départ) au coin le plus loin ;
+      // ensuite l'échelle s peut dépasser 1 si le point s'éloigne en tournant
+      const a0 = ((-45 + gsap.getProperty(svg, 'rotation')) * Math.PI) / 180;
+      const x0 = geo.cx + geo.d * Math.cos(a0), y0 = geo.cy + geo.d * Math.sin(a0);
+      geo.R = Math.hypot(Math.max(x0, w - x0), Math.max(y0, h - y0));
+    };
+    // Mode disque : le disque et la scène passent en position absolue (voir styles.css, .hero.is-exiting) ;
+    // retiré seulement le temps d'une nouvelle mesure (redimensionnement)
+    const setExit = on => {
+      if (on === exiting) return;
+      exiting = on;
+      if (on) {
+        hero.style.setProperty('--hero-w', geo.w + 'px');
+        hero.style.setProperty('--hero-h', geo.h + 'px');
+        hero.style.setProperty('--clip-d', 2 * geo.R + 'px');
+        hero.classList.add('is-exiting');
+      } else {
+        hero.classList.remove('is-exiting');
+        disc.style.transform = stage.style.transform = disc.style.visibility = '';
+      }
     };
 
-    // Le cercle se referme vers l'emplacement du point vermillon ; le point, lui (calque à part),
+    // Le disque se referme vers le point vermillon : échelle s sur le disque, 1/s sur la scène
+    // (le contenu ne bouge pas, seul le bord du disque avance). Le point, lui (calque à part),
     // disparaît pendant le retrait pour ne pas rester posé sur la section 01.
+    // La structure du disque est en place dès le chargement (au repos, le disque couvre tout le hero) :
+    // la bascule de mise en page ne tombe donc jamais pendant le scroll (elle causait un à-coup sur Safari).
     const clip = () => {
-      const trig = tl && tl.scrollTrigger;
       flag();
-      if (!trig || trig.progress < 0.0005) { if (last) { hero.style.clipPath = ''; last = ''; } return; }
       if (!geo) measure();
+      setExit(true);
       const a = ((-45 + gsap.getProperty(ring, 'rotation') + gsap.getProperty(svg, 'rotation')) * Math.PI) / 180;
       const cx = geo.cx + geo.d * Math.cos(a);
       const cy = geo.cy + geo.d * Math.sin(a);
       const rMax = Math.hypot(Math.max(cx, geo.w - cx), Math.max(cy, geo.h - cy));
-      const r = Math.max(0, rMax * (1 - st.p));
-      const v = `circle(${r.toFixed(1)}px at ${cx.toFixed(1)}px ${cy.toFixed(1)}px)`;
-      if (v !== last) { hero.style.clipPath = v; last = v; }
+      const s = Math.max(0, (rMax + 4) * (1 - st.p)) / geo.R; // +4 px : le coin le plus loin reste couvert au repos
+      if (s < 0.002) { disc.style.visibility = 'hidden'; return; }
+      disc.style.visibility = '';
+      disc.style.transform = `translate(${(cx - geo.R).toFixed(2)}px, ${(cy - geo.R).toFixed(2)}px) scale(${s.toFixed(5)})`;
+      stage.style.transform = `translate(${(geo.R - cx / s).toFixed(2)}px, ${(geo.R - cy / s).toFixed(2)}px) scale(${(1 / s).toFixed(5)})`;
     };
 
     tl = gsap.timeline({
@@ -544,7 +570,7 @@
         // « bottom bottom » : si le hero dépasse l'écran (mobile), on le lit en entier avant le retrait
         trigger: hero, start: 'bottom bottom', end: '+=100%',
         pin: true, pinSpacing: false, scrub: true,
-        onRefreshInit: () => { geo = null; },
+        onRefreshInit: () => { setExit(false); geo = null; },
         onRefresh: () => { measure(); clip(); },
       },
     });

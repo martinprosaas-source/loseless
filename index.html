@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=202610081530">
+<link rel="stylesheet" href="styles.css?v=202610081800">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 </head>
 <body>
@@ -80,6 +80,9 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
+    <!-- Retrait en cercle : disque (.hero__clip) rétréci par transform, scène (.hero__stage) qui annule l'échelle -->
+    <div class="hero__clip"><div class="hero__stage">
+
     <div class="hero__ring" aria-hidden="true">
       <svg viewBox="0 0 100 100">
         <defs>
@@ -110,7 +113,7 @@
         </div>
         <!-- Film : boucle muette dans le hero ; « Activer le son » le relance au début, avec le son -->
         <div class="hero__film">
-          <video class="hero__film-video" data-src="assets/video/film.mp4?v=202610081530" poster="assets/video/film-apercu.jpg?v=202610081530" muted loop playsinline preload="none" aria-label="Film Loseless (55 secondes)"></video>
+          <video class="hero__film-video" data-src="assets/video/film.mp4?v=202610081800" poster="assets/video/film-apercu.jpg?v=202610081800" muted loop playsinline preload="none" aria-label="Film Loseless (55 secondes)"></video>
           <span class="hero__film-bar" aria-hidden="true"></span>
           <button class="hero__film-cta" type="button" data-film-sound aria-pressed="false">
             <span class="hero__film-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="i-off" d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="i-on" d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
@@ -119,6 +122,7 @@
         </div>
       </div>
     </div>
+    </div></div>
   </section>
 
   <!-- CHIFFRES — bandeau de preuve juste après le hero -->
@@ -599,6 +603,6 @@
 <script src="vendor/SplitText.min.js" defer></script>
 <script src="vendor/CustomEase.min.js" defer></script>
 <script src="vendor/lenis.min.js" defer></script>
-<script src="main.js?v=202610081530" defer></script>
+<script src="main.js?v=202610081800" defer></script>
 </body>
 </html>
