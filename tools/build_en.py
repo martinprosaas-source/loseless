@@ -57,8 +57,8 @@ INDEX = [
      '<p class="hero__tag">Affiliate agency for high-ticket businesses</p>'),
     ('<h1 class="hero__title">Vos «&nbsp;pas le budget&nbsp;»<br class="br-desk"> rapportent aussi.</h1>',
      '<h1 class="hero__title">Your <span class="nobr">“no budget”</span> leads<br class="br-desk"> still pay.</h1>'),
-    ('On construit votre offre low-ticket. Nos setters la vendent. Vous encaissez.</p>',
-     'We build your low-ticket offer. Our setters sell it. You get paid.</p>'),
+    ('On construit votre offre low-ticket, derrière votre offre ou en porte d\'entrée de votre funnel. Nos setters la vendent. Vous encaissez.</p>',
+     'We build your low-ticket offer, behind your main offer or as the front door of your funnel. Our setters sell it. You get paid.</p>'),
     ('Les leads qui n\'ont pas le budget pour votre accompagnement ne repartent plus les mains vides. Nos setters les rappellent et leur proposent une offre à leur portée, sous votre nom. Vous touchez 65&nbsp;% de chaque vente, sans rien recruter ni gérer.',
      'Leads who can’t afford your program no longer leave empty-handed. Our setters call them back and offer them something within their budget, under your name. You get 65% of every sale, with nothing to hire or manage.'),
     ('>Calculer ce que je perds</a>', '>See what I’m losing</a>'),
@@ -70,7 +70,6 @@ INDEX = [
 
     # Chiffres (après le hero)
     ('>Loseless en chiffres</h2>', '>Loseless in numbers</h2>'),
-    ('Affilié Base44</p>', 'Base44 affiliate</p>'),
     ('<span data-count="100000" data-suffix="&nbsp;€">100&#8239;000&nbsp;€</span>',
      '<span data-count="100000" data-prefix="€">€100,000</span>'),
     ('<span class="figure__label">de chiffre d\'affaires généré</span>', '<span class="figure__label">in revenue generated</span>'),
@@ -90,8 +89,7 @@ INDEX = [
      '<span class="stat__num" data-count="" data-suffix="%">80%</span>'),
     ('des leads en appel de vente repartent sans rien acheter. Et le prix est l\'une des premières raisons de refus.',
      'of leads on sales calls leave without buying anything. And price is one of the top reasons they say no.'),
-    ('Taux de closing moyen de 20&nbsp;%, tous secteurs confondus. Source&nbsp;: HubSpot, 2024.',
-     'Average close rate of 20%, across all industries. Source: HubSpot, 2024.'),
+    ('Taux de closing moyen de 20&nbsp;%, tous secteurs confondus. Source&nbsp;: <a', 'Average close rate of 20%, across all industries. Source: <a'),
     ('Vous avez payé pour les faire venir&nbsp;: publicité, contenu, temps de closing. Quand ils disent «&nbsp;pas le budget&nbsp;», l\'appel se termine et tout cet investissement repart avec eux. Le mois suivant, ils achètent une formation moins chère. Chez quelqu\'un d\'autre, qui touche la commission à votre place.',
      'You paid to bring them in: ads, content, closing time. When they say “no budget”, the call ends and your whole investment walks out the door with them. The next month, they buy a cheaper course. From someone else, who pockets the commission instead of you.'),
     ('>Leads acquis</span>', '>Leads acquired</span>'),
@@ -125,7 +123,7 @@ INDEX = [
     ('Rien ne sort de la boucle.', 'Nothing leaks out of the loop.'),
 
     # 03 — Ce que ça change
-    ('03 — Ce que ça change', '03 — What changes'),
+    ('04 — Ce que ça change', '04 — What changes'),
     ('Chaque lead mène quelque part.', 'Every lead goes somewhere.'),
     ('>Aujourd\'hui</p>', '>Today</p>'),
     ('>Avec loseless</p>', '>With loseless</p>'),
@@ -146,19 +144,19 @@ INDEX = [
     ('>Combien ça représente pour vous&nbsp;?</a>', '>How much is that worth to you?</a>'),
 
     # 04 — Installation
-    ('04 — Comment on l\'installe', '04 — How we set it up'),
+    ('05 — Comment on l\'installe', '05 — How we set it up'),
     ('On installe. Vous encaissez.', 'We set it up. You get paid.'),
-    ('<h3>Cadrage</h3>\n            <p>On étudie votre audience, vos leads et votre offre high-ticket. Puis on construit votre offre low-ticket&nbsp;: l\'offre, la page et la vidéo. Vous validez tout.</p>',
-     '<h3>Scoping</h3>\n            <p>We study your audience, your leads and your high-ticket offer. Then we build your low-ticket offer: the offer, the page and the video. You approve everything.</p>'),
-    ('<h3>Branchement</h3>\n            <p>On se branche sur votre formulaire. Sous votre seuil de budget, le lead est redirigé vers votre page low-ticket et sa vidéo, puis transmis directement à nos setters.</p>',
-     '<h3>Integration</h3>\n            <p>We plug into your application form. Below your budget threshold, the lead is redirected to your low-ticket page and its video, then handed straight to our setters.</p>'),
+    ('<h3>Cadrage</h3>\n            <p>On étudie votre audience, vos leads et votre offre high-ticket. Puis on construit votre offre low-ticket&nbsp;: l\'offre, la page, la vidéo, l\'outil et le workshop. Vous validez tout.</p>',
+     '<h3>Scoping</h3>\n            <p>We study your audience, your leads and your high-ticket offer. Then we build your low-ticket offer: the offer, the page, the video, the tool and the workshop. You approve everything.</p>'),
+    ('<h3>Branchement</h3>\n            <p>On se branche sur votre formulaire, ou vos pubs, votre VSL et vos influenceurs envoient directement vers votre page low-ticket, avec un lien suivi par source. Chaque lead arrive chez nos setters avec sa provenance.</p>',
+     '<h3>Integration</h3>\n            <p>We plug into your application form, or your ads, your VSL and your influencers send people straight to your low-ticket page, with a tracked link for each source. Every lead reaches our setters with its origin.</p>'),
     ('<h3>Lancement</h3>\n            <p>Nos setters, recrutés, formés et managés par nous, appellent chaque lead et concluent les ventes. Si vous voulez accélérer, une story avec le lien suffit.</p>',
      '<h3>Launch</h3>\n            <p>Our setters, hired, trained and managed by us, call every lead and close the sales. Want to speed things up? One story with the link is all it takes.</p>'),
     ('<h3>Suivi et remontée</h3>\n            <p>On suit les résultats avec vous et on ajuste. Les acheteurs prêts pour votre accompagnement vous sont renvoyés.</p>',
      '<h3>Tracking &amp; hand-back</h3>\n            <p>We track the results with you and fine-tune. Buyers who are ready for your program are sent back to you.</p>'),
 
     # 05 — Simulateur
-    ('05 — Simulateur', '05 — Simulator'),
+    ('07 — Simulateur', '07 — Simulator'),
     ('Ceux que vous laissez partir.', 'The ones you let walk away.'),
     ('Deux chiffres de votre activité suffisent.', 'Two numbers from your business are all it takes.'),
     ('>Leads qualifiés par mois</label>', '>Qualified leads per month</label>'),
@@ -174,7 +172,7 @@ INDEX = [
     ('data-text="Calculer mon potentiel">Calculer mon potentiel</span>', 'data-text="Calculate my potential">Calculate my potential</span>'),
 
     # 06 — La preuve
-    ('06 — La preuve', '06 — Proof'),
+    ('08 — La preuve', '08 — Proof'),
     ('Déjà en place chez Gaspard Grosjean.', 'Already live with Gaspard Grosjean.'),
     ('Fondateur d\'ECOM&nbsp;BOSS, l\'un des plus gros infopreneurs e-commerce français. Plus de 70&nbsp;000 abonnés sur Instagram.',
      'Founder of ECOM&nbsp;BOSS, one of France’s biggest e-commerce educators. Over 70,000 followers on Instagram.'),
@@ -186,7 +184,7 @@ INDEX = [
     ('<span>Gaspard Grosjean, fondateur d\'ECOM&nbsp;BOSS</span>', '<span>Gaspard Grosjean, founder of ECOM&nbsp;BOSS</span>'),
 
     # 07 — Le modèle
-    ('07 — Le modèle', '07 — The model'),
+    ('09 — Le modèle', '09 — The model'),
     ('Zéro coût d\'entrée.', 'Zero upfront cost.'),
     ('On gagne seulement si vous gagnez.', 'We only win when you win.'),
     ('<span class="model__big">65&nbsp;%</span><span class="model__small">pour vous, sur chaque vente</span>',
@@ -222,14 +220,96 @@ INDEX = [
      'Only on sales. Nothing to pay upfront, and you keep at least 65% of every sale. If it doesn’t sell, we earn nothing.'),
     ('Est-ce que je m\'engage sur une durée&nbsp;?', 'Is there a minimum commitment?'),
     ('Pour quels infopreneurs ça marche&nbsp;?', 'Who is it for?'),
-    ('Ceux qui vendent un accompagnement high&#8209;ticket et reçoivent régulièrement des leads qui n\'ont pas le budget.',
-     'Coaches and course creators who sell a high&#8209;ticket program and regularly get leads who can’t afford it.'),
-    ('[À COMPLÉTER&nbsp;: critère minimum, par exemple un nombre de leads par mois]',
-     '[TO BE COMPLETED: minimum requirement, e.g. number of leads per month]'),
+    ('Ceux qui vendent un accompagnement high&#8209;ticket&nbsp;: pour récupérer les leads qui n\'ont pas le budget, ou pour faire entrer plus de clients par une offre low&#8209;ticket.',
+     'Coaches and course creators who sell a high&#8209;ticket program: to recover the leads who can’t afford it, or to bring in more customers through a low&#8209;ticket offer.'),
     ('[À COMPLÉTER]', '[TO BE COMPLETED]'),
 
+    # ------------------------------------------------------------------
+    # Deux modes : rattrapage / porte d'entrée (brief du 18/10/2026)
+    # ------------------------------------------------------------------
+    ('aria-label="Façon de brancher Loseless"', 'aria-label="How to plug in Loseless"'),
+    ('>En rattrapage</button>', '>Safety net</button>'),
+    ('>En porte d\'entrée</button>', '>Front door</button>'),
+    # boucle, mode porte d'entrée
+    ('data-alt-h="Contenu et pubs" data-alt-p="Vos pubs, votre VSL et vos influenceurs attirent l\'attention, avec un lien suivi pour chacun."',
+     'data-alt-h="Content and ads" data-alt-p="Your ads, your VSL and your influencers get attention, each with its own tracked link."'),
+    ('data-alt-h="Lead" data-alt-p="Il remplit le formulaire de votre page low-ticket."',
+     'data-alt-h="Lead" data-alt-p="They fill in the form on your low-ticket page."'),
+    ('data-alt-h="Appel setter" data-alt-p="Un de nos setters l\'appelle rapidement."',
+     'data-alt-h="Setter call" data-alt-p="One of our setters calls them quickly."'),
+    ('data-alt-h="Vente encaissée" data-alt-p="Il achète votre offre low-ticket. Vous encaissez directement."',
+     'data-alt-h="Cash collected" data-alt-p="They buy your low-ticket offer. The money goes straight to you."'),
+    ('data-alt-h="Workshop 7 jours" data-alt-p="Il construit son outil jour après jour, avec un coach IA."',
+     'data-alt-h="7-day workshop" data-alt-p="They build their tool day by day, with an AI coach."'),
+    ('data-alt-h="Nurturing" data-alt-p="On reste en contact et on repère ceux qui sont prêts à aller plus loin."',
+     'data-alt-h="Nurturing" data-alt-p="We stay in touch and spot those who are ready to go further."'),
+    ('data-alt-h="Upsell high-ticket" data-alt-p="Les acheteurs prêts montent vers votre accompagnement."',
+     'data-alt-h="High-ticket upsell" data-alt-p="Buyers who are ready move up to your coaching program."'),
+    ('data-alt="Contenu et pubs"', 'data-alt="Content and ads"'),
+    ('data-alt="Appel setter"', 'data-alt="Setter call"'),
+    ('data-alt="Vente encaissée"', 'data-alt="Cash collected"'),
+    ('data-alt="Workshop 7 jours"', 'data-alt="7-day workshop"'),
+    ('data-alt="Upsell high-ticket"', 'data-alt="High-ticket upsell"'),
+    # 03 — Deux façons
+    ('03 — Deux façons', '03 — Two ways'),
+    ('Derrière votre offre. Ou devant.', 'Behind your offer. Or in front of it.'),
+    ('</span>En rattrapage</p>', '</span>As a safety net</p>'),
+    ('Rien ne change dans votre funnel.', 'Nothing changes in your funnel.'),
+    ('Votre offre principale reste en place. Les leads qui n\'ont pas le budget sont redirigés vers votre offre low-ticket, et nos setters les rappellent.',
+     'Your main offer stays as it is. Leads who can’t afford it are redirected to your low-ticket offer, and our setters call them back.'),
+    ('<li>Votre formulaire</li>', '<li>Your form</li>'),
+    ('<li>«&nbsp;Pas le budget&nbsp;»</li>', '<li>“No budget”</li>'),
+    ('<li>Offre low-ticket</li>', '<li>Low-ticket offer</li>'),
+    ('<li>Upsell high-ticket</li>', '<li>High-ticket upsell</li>'),
+    ('Comme chez Gaspard Grosjean, ECOM&nbsp;BOSS.', 'Like at Gaspard Grosjean’s ECOM&nbsp;BOSS.'),
+    ('Afficher la page en mode rattrapage', 'Show the page in safety-net mode'),
+    ('</span>En porte d\'entrée</p>', '</span>As the front door</p>'),
+    ('Le premier achat de vos clients.', 'Your customers’ first purchase.'),
+    ('Votre offre low-ticket devient l\'entrée de votre funnel. Vos pubs, votre VSL et vos influenceurs envoient vers elle, nos setters la vendent, et les meilleurs acheteurs montent vers votre high-ticket.',
+     'Your low-ticket offer becomes the entry point of your funnel. Your ads, your VSL and your influencers send people to it, our setters sell it, and the best buyers move up to your high-ticket.'),
+    ('<li>Pubs, VSL, influenceurs</li>', '<li>Ads, VSL, influencers</li>'),
+    ('<li>Workshop 7&nbsp;jours</li>', '<li>7-day workshop</li>'),
+    ('En place chez un deuxième partenaire e-commerce.', 'Live with a second e-commerce partner.'),
+    ('Afficher la page en mode porte d\'entrée', 'Show the page in front-door mode'),
+    ('Cliquez sur une carte&nbsp;: la boucle et le simulateur s\'adaptent à votre cas.', 'Click a card: the loop and the simulator adapt to your case.'),
+    # 06 — Ce que reçoit votre acheteur
+    ('06 — Ce que reçoit votre acheteur', '06 — What your buyer gets'),
+    ('Pas une formation de plus. Un outil qu\'il construit.', 'Not another course. A tool they build.'),
+    ('<h3>Un workshop de 7&nbsp;jours</h3><p>Une étape par jour, une vidéo et une consigne. Il avance sans se perdre.</p>',
+     '<h3>A 7-day workshop</h3><p>One step a day, with a video and a clear task. They move forward without getting lost.</p>'),
+    ('<h3>Son propre outil</h3><p>Il le construit lui-même, jour après jour, et le garde pour piloter son activité.</p>',
+     '<h3>Their own tool</h3><p>They build it themselves, day by day, and keep it to run their business.</p>'),
+    ('<h3>Un coach IA sur WhatsApp</h3><p>Il connaît ses données et lui dit quoi faire ensuite, à toute heure.</p>',
+     '<h3>An AI coach on WhatsApp</h3><p>It knows their data and tells them what to do next, any time.</p>'),
+    ('<h3>Un espace membre</h3><p>Les vidéos de votre méthode, rangées dans l\'ordre où il en a besoin.</p>',
+     '<h3>A member area</h3><p>The videos of your method, in the order they need them.</p>'),
+    ('alt="L\'outil construit par l\'acheteur"', 'alt="The tool built by the buyer"'),
+    ('alt="Le coach IA sur WhatsApp"', 'alt="The AI coach on WhatsApp"'),
+    # 07 — Simulateur, mode porte d'entrée
+    ('data-alt="Combien entrent chez vous&nbsp;?"', 'data-alt="How many come in?"'),
+    ('data-alt="Deux hypothèses suffisent."', 'data-alt="Two assumptions are enough."'),
+    ('data-alt="Leads par mois"', 'data-alt="Leads per month"'),
+    ('data-alt="Part qui achète l\'offre low-ticket"', 'data-alt="Share who buy the low-ticket offer"'),
+    ('data-alt="Acheteurs / mois"', 'data-alt="Buyers / month"'),
+    ('data-alt="Chaque point orange est un client qui entre chez vous par un premier achat, et qui peut monter vers votre high-ticket."',
+     'data-alt="Each orange dot is a customer who comes in through a first purchase, and who can move up to your high-ticket."'),
+    ('Hypothèses à ajuster. Ce n\'est pas une promesse de résultat.', 'Assumptions to adjust. Not a promise of results.'),
+    # FAQ, nouvelles questions et réponses
+    ('En rattrapage ou en porte d\'entrée&nbsp;: comment choisir&nbsp;?', 'Safety net or front door: how do I choose?'),
+    ('Si votre offre principale vend déjà bien, on se place derrière elle pour récupérer les «&nbsp;pas le budget&nbsp;». Si vous lancez votre funnel ou que vous voulez faire entrer plus de monde, l\'offre low-ticket devient votre porte d\'entrée. On en parle ensemble pendant l\'appel.',
+     'If your main offer already sells well, we sit behind it to recover the people who can’t afford it. If you’re launching your funnel or want to bring more people in, the low-ticket offer becomes your front door. We’ll decide together on the call.'),
+    ('Nous. On construit votre offre low&#8209;ticket de A à Z&nbsp;: l\'offre, la page, la vidéo, l\'outil et le workshop, sous votre nom. Vous validez tout avant le lancement.',
+     'We do. We build your low&#8209;ticket offer from start to finish: the offer, the page, the video, the tool and the workshop, under your name. You approve everything before launch.'),
+    ('Qu\'est-ce que reçoit l\'acheteur&nbsp;?', 'What does the buyer get?'),
+    ('Un workshop de 7&nbsp;jours, un outil qu\'il construit lui-même, un coach IA sur WhatsApp et un espace membre avec les vidéos de votre méthode.',
+     'A 7-day workshop, a tool they build themselves, an AI coach on WhatsApp and a member area with the videos of your method.'),
+    ('Sur quels outils vous appuyez-vous&nbsp;?', 'Which tools do you use?'),
+    ('L\'outil de vos acheteurs est construit sur Base44, dont Loseless est partenaire. Vous n\'avez rien à installer.',
+     'Your buyers’ tool is built on Base44, and Loseless is a Base44 partner. You have nothing to set up.'),
+    ('Questions masquées tant que la réponse n\'est pas fournie', 'Hidden questions until the answer is provided'),
+
     # 09 — Pour qui
-    ('09 — Pour qui', '09 — Who it’s for'),
+    ('11 — Pour qui', '11 — Who it’s for'),
     ('On ne travaille pas avec tout le monde.', 'We don’t work with everyone.'),
     ('Loseless s\'adresse aux business high&#8209;ticket qui font plus de 10&#8239;000&nbsp;€ de CA par mois. En dessous, votre volume de leads ne suffit pas pour que le système soit rentable pour vous.',
      'Loseless is for high-ticket businesses doing over €10,000 in monthly revenue. Below that, your lead volume isn’t enough for the system to pay off for you.'),
@@ -308,7 +388,7 @@ def build(name, pairs):
 
     # contrôle : plus aucun texte visible en français
     visible = re.sub(r'<!--.*?-->|<script.*?</script>|<style.*?</style>|<svg.*?</svg>', ' ', out, flags=re.S)
-    attrs = ' '.join(re.findall(r'(?:aria-label|aria-valuetext|content|data-text|title)="([^"]*)"', visible))
+    attrs = ' '.join(re.findall(r'(?:aria-label|aria-valuetext|content|data-text|title|data-alt|data-alt-h|data-alt-p)="([^"]*)"', visible))
     text = html.unescape(re.sub(r'<[^>]+>', ' ', visible)) + ' ' + html.unescape(attrs)
     text = text.replace('Français', '').replace('Côte d’Ivoire', '')  # noms propres
     suspects = re.findall(r"[^\s]*[éèêàçùûôî«»][^\s]*|\b(?:le|la|les|des|vous|votre|pour|avec|une|est)\b", text)

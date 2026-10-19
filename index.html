@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=202610081900">
+<link rel="stylesheet" href="styles.css?v=202610181540">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 </head>
 <body>
@@ -104,7 +104,7 @@
       <h1 class="hero__title">Vos «&nbsp;pas le budget&nbsp;»<br class="br-desk"> rapportent aussi.</h1>
       <div class="hero__bottom">
         <div class="hero__copy">
-          <p class="hero__promise promise">On construit votre offre low-ticket. Nos setters la vendent. Vous encaissez.</p>
+          <p class="hero__promise promise">On construit votre offre low-ticket, derrière votre offre ou en porte d'entrée de votre funnel. Nos setters la vendent. Vous encaissez.</p>
           <p class="hero__text">Les leads qui n'ont pas le budget pour votre accompagnement ne repartent plus les mains vides. Nos setters les rappellent et leur proposent une offre à leur portée, sous votre nom. Vous touchez 65&nbsp;% de chaque vente, sans rien recruter ni gérer.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Réserver un appel">Réserver un appel</span></a>
@@ -130,12 +130,12 @@
     <div class="wrap">
       <div class="figures__top" data-fade>
         <h2 class="figures__title" id="t-figures">Loseless en chiffres</h2>
-        <p class="figures__badge"><span class="figures__badge-dot" aria-hidden="true"></span>Affilié Base44</p>
       </div>
       <ul class="figures__list" data-stagger>
         <li class="figure">
           <span class="figure__num"><span data-count="100000" data-suffix="&nbsp;€">100&#8239;000&nbsp;€</span></span>
           <span class="figure__label">de chiffre d'affaires généré</span>
+          <span class="figure__note" data-ca-note hidden></span>
         </li>
         <li class="figure">
           <span class="figure__num"><span data-count="400" data-prefix="+">+400</span></span>
@@ -167,7 +167,7 @@
           <span class="stat__num" data-count="" data-suffix="&nbsp;%">80&nbsp;%</span>
           <span class="stat__label">des leads en appel de vente repartent sans rien acheter. Et le prix est l'une des premières raisons de refus.</span>
         </p>
-        <p class="stat__source" data-fade>Taux de closing moyen de 20&nbsp;%, tous secteurs confondus. Source&nbsp;: HubSpot, 2024.</p>
+        <p class="stat__source" data-fade>Taux de closing moyen de 20&nbsp;%, tous secteurs confondus. Source&nbsp;: <a href="https://blog.hubspot.com/sales/new-sales-close-rate-industry-benchmarks-how-does-your-close-rate-compare" target="_blank" rel="noopener">HubSpot, 2024<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>.</p>
         <p class="body" data-fade>Vous avez payé pour les faire venir&nbsp;: publicité, contenu, temps de closing. Quand ils disent «&nbsp;pas le budget&nbsp;», l'appel se termine et tout cet investissement repart avec eux. Le mois suivant, ils achètent une formation moins chère. Chez quelqu'un d'autre, qui touche la commission à votre place.</p>
       </div>
 
@@ -190,19 +190,20 @@
       <div class="loop__head">
         <p class="eyebrow" data-fade>02 — La boucle</p>
         <h2 id="t-boucle" class="h2" data-split>Une boucle, pas un entonnoir.</h2>
+        <div class="mode loop__mode" role="group" aria-label="Façon de brancher Loseless"><button class="mode__opt" type="button" data-mode-set="rattrapage" aria-pressed="true">En rattrapage</button><button class="mode__opt" type="button" data-mode-set="entree" aria-pressed="false">En porte d'entrée</button></div>
       </div>
 
       <div class="loop__panel">
         <p class="loop__count" aria-hidden="true"><span class="loop__count-cur">01</span>&thinsp;/&thinsp;07</p>
         <div class="loop__rail" aria-hidden="true"><span class="loop__rail-fill"></span><span class="loop__rail-dot"></span></div>
         <ol class="loop__steps">
-          <li class="loop__step"><h3>Lead</h3><p>Il a vu votre contenu, il a rempli le formulaire. Vous avez payé pour qu'il arrive jusqu'ici.</p></li>
-          <li class="loop__step"><h3>Qualification</h3><p>Formulaire ou appel&nbsp;: il vous dit s'il a le budget pour votre accompagnement.</p></li>
-          <li class="loop__step"><h3>«&nbsp;Pas le budget&nbsp;»</h3><p>Aujourd'hui, c'est ici qu'il disparaît. Avec loseless, il est redirigé vers votre offre low-ticket.</p></li>
-          <li class="loop__step"><h3>Offre low-ticket</h3><p>Une page et une vidéo dédiées lui présentent une offre à sa portée. Nos setters l'appellent et concluent la vente.</p></li>
-          <li class="loop__step"><h3>Vente encaissée</h3><p>Il achète. Vous gardez au moins 65&nbsp;% de chaque vente, sans avoir à vous en occuper.</p></li>
-          <li class="loop__step"><h3>Nurturing</h3><p>Il reste dans votre écosystème. Il progresse, et vous gardez le lien.</p></li>
-          <li class="loop__step"><h3>Upsell high-ticket</h3><p>Quand il est prêt, il revient vers votre accompagnement. Cette fois, avec le budget.</p></li>
+          <li class="loop__step" data-alt-h="Contenu et pubs" data-alt-p="Vos pubs, votre VSL et vos influenceurs attirent l'attention, avec un lien suivi pour chacun."><h3>Lead</h3><p>Il a vu votre contenu, il a rempli le formulaire. Vous avez payé pour qu'il arrive jusqu'ici.</p></li>
+          <li class="loop__step" data-alt-h="Lead" data-alt-p="Il remplit le formulaire de votre page low-ticket."><h3>Qualification</h3><p>Formulaire ou appel&nbsp;: il vous dit s'il a le budget pour votre accompagnement.</p></li>
+          <li class="loop__step" data-alt-h="Appel setter" data-alt-p="Un de nos setters l'appelle rapidement."><h3>«&nbsp;Pas le budget&nbsp;»</h3><p>Aujourd'hui, c'est ici qu'il disparaît. Avec loseless, il est redirigé vers votre offre low-ticket.</p></li>
+          <li class="loop__step" data-alt-h="Vente encaissée" data-alt-p="Il achète votre offre low-ticket. Vous encaissez directement."><h3>Offre low-ticket</h3><p>Une page et une vidéo dédiées lui présentent une offre à sa portée. Nos setters l'appellent et concluent la vente.</p></li>
+          <li class="loop__step" data-alt-h="Workshop 7 jours" data-alt-p="Il construit son outil jour après jour, avec un coach IA."><h3>Vente encaissée</h3><p>Il achète. Vous gardez au moins 65&nbsp;% de chaque vente, sans avoir à vous en occuper.</p></li>
+          <li class="loop__step" data-alt-h="Nurturing" data-alt-p="On reste en contact et on repère ceux qui sont prêts à aller plus loin."><h3>Nurturing</h3><p>Il reste dans votre écosystème. Il progresse, et vous gardez le lien.</p></li>
+          <li class="loop__step" data-alt-h="Upsell high-ticket" data-alt-p="Les acheteurs prêts montent vers votre accompagnement."><h3>Upsell high-ticket</h3><p>Quand il est prêt, il revient vers votre accompagnement. Cette fois, avec le budget.</p></li>
         </ol>
       </div>
 
@@ -231,13 +232,13 @@
             <circle class="loop__dot" cx="76.87" cy="23.13" r="13" fill="#D2401C"/>
           </svg>
           <ul class="loop__labels">
-            <li style="--c:.7071;--s:-.7071">Lead</li>
-            <li style="--c:.9937;--s:.1120">Qualification</li>
-            <li style="--c:.5320;--s:.8467">«&nbsp;Pas le budget&nbsp;»</li>
-            <li style="--c:-.3303;--s:.9439">Offre low-ticket</li>
-            <li style="--c:-.9439;--s:.3303">Vente encaissée</li>
-            <li style="--c:-.8467;--s:-.5320">Nurturing</li>
-            <li style="--c:-.1120;--s:-.9937">Upsell high-ticket</li>
+            <li style="--c:.7071;--s:-.7071" data-alt="Contenu et pubs">Lead</li>
+            <li style="--c:.9937;--s:.1120" data-alt="Lead">Qualification</li>
+            <li style="--c:.5320;--s:.8467" data-alt="Appel setter">«&nbsp;Pas le budget&nbsp;»</li>
+            <li style="--c:-.3303;--s:.9439" data-alt="Vente encaissée">Offre low-ticket</li>
+            <li style="--c:-.9439;--s:.3303" data-alt="Workshop 7 jours">Vente encaissée</li>
+            <li style="--c:-.8467;--s:-.5320" data-alt="Nurturing">Nurturing</li>
+            <li style="--c:-.1120;--s:-.9937" data-alt="Upsell high-ticket">Upsell high-ticket</li>
           </ul>
         </div>
       </div>
@@ -246,10 +247,47 @@
     </div>
   </section>
 
-  <!-- 03 — CE QUE ÇA CHANGE (rideau avant / après) -->
+  <!-- 03 — DEUX FAÇONS : un clic sur une carte passe toute la page dans ce mode -->
+  <section class="section ways" id="deux-facons" aria-labelledby="t-ways">
+    <div class="wrap">
+      <p class="eyebrow" data-fade>03 — Deux façons</p>
+      <h2 id="t-ways" class="h2" data-split>Derrière votre offre. Ou devant.</h2>
+      <div class="ways__grid" data-stagger>
+        <article class="way" data-way="rattrapage">
+          <p class="way__label"><span class="way__dot" aria-hidden="true"></span>En rattrapage</p>
+          <h3 class="way__title">Rien ne change dans votre funnel.</h3>
+          <p class="way__text">Votre offre principale reste en place. Les leads qui n'ont pas le budget sont redirigés vers votre offre low-ticket, et nos setters les rappellent.</p>
+          <ol class="way__path">
+            <li>Votre formulaire</li>
+            <li>«&nbsp;Pas le budget&nbsp;»</li>
+            <li>Offre low-ticket</li>
+            <li>Upsell high-ticket</li>
+          </ol>
+          <p class="way__ref">Comme chez Gaspard Grosjean, ECOM&nbsp;BOSS.</p>
+          <button class="way__hit" type="button" data-mode-set="rattrapage" aria-pressed="true"><span class="sr-only">Afficher la page en mode rattrapage</span></button>
+        </article>
+        <article class="way" data-way="entree">
+          <p class="way__label"><span class="way__dot" aria-hidden="true"></span>En porte d'entrée</p>
+          <h3 class="way__title">Le premier achat de vos clients.</h3>
+          <p class="way__text">Votre offre low-ticket devient l'entrée de votre funnel. Vos pubs, votre VSL et vos influenceurs envoient vers elle, nos setters la vendent, et les meilleurs acheteurs montent vers votre high-ticket.</p>
+          <ol class="way__path">
+            <li>Pubs, VSL, influenceurs</li>
+            <li>Offre low-ticket</li>
+            <li>Workshop 7&nbsp;jours</li>
+            <li>Upsell high-ticket</li>
+          </ol>
+          <p class="way__ref">En place chez un deuxième partenaire e-commerce.</p>
+          <button class="way__hit" type="button" data-mode-set="entree" aria-pressed="false"><span class="sr-only">Afficher la page en mode porte d'entrée</span></button>
+        </article>
+      </div>
+      <p class="ways__hint" data-fade>Cliquez sur une carte&nbsp;: la boucle et le simulateur s'adaptent à votre cas.</p>
+    </div>
+  </section>
+
+  <!-- 04 — CE QUE ÇA CHANGE (rideau avant / après) -->
   <section class="change" aria-labelledby="t-benefits">
     <div class="wrap change__head">
-      <p class="eyebrow" data-fade>03 — Ce que ça change</p>
+      <p class="eyebrow" data-fade>04 — Ce que ça change</p>
       <h2 id="t-benefits" class="h2" data-split>Chaque lead mène quelque part.</h2>
     </div>
 
@@ -336,11 +374,11 @@
     <p class="wrap change__more"><a class="link link--strong" href="#simulateur">Combien ça représente pour vous&nbsp;?</a></p>
   </section>
 
-  <!-- 04 — COMMENT ON L'INSTALLE (scroll horizontal) -->
+  <!-- 05 — COMMENT ON L'INSTALLE (scroll horizontal) -->
   <section class="install" aria-labelledby="t-install">
     <div class="install__pin">
       <div class="wrap install__head">
-        <p class="eyebrow" data-fade>04 — Comment on l'installe</p>
+        <p class="eyebrow" data-fade>05 — Comment on l'installe</p>
         <h2 id="t-install" class="h2" data-split>On installe. Vous encaissez.</h2>
       </div>
       <div class="install__viewport">
@@ -350,13 +388,13 @@
             <span class="step__node" aria-hidden="true"></span>
             <span class="step__num">01</span>
             <h3>Cadrage</h3>
-            <p>On étudie votre audience, vos leads et votre offre high-ticket. Puis on construit votre offre low-ticket&nbsp;: l'offre, la page et la vidéo. Vous validez tout.</p>
+            <p>On étudie votre audience, vos leads et votre offre high-ticket. Puis on construit votre offre low-ticket&nbsp;: l'offre, la page, la vidéo, l'outil et le workshop. Vous validez tout.</p>
           </li>
           <li class="step">
             <span class="step__node" aria-hidden="true"></span>
             <span class="step__num">02</span>
             <h3>Branchement</h3>
-            <p>On se branche sur votre formulaire. Sous votre seuil de budget, le lead est redirigé vers votre page low-ticket et sa vidéo, puis transmis directement à nos setters.</p>
+            <p>On se branche sur votre formulaire, ou vos pubs, votre VSL et vos influenceurs envoient directement vers votre page low-ticket, avec un lien suivi par source. Chaque lead arrive chez nos setters avec sa provenance.</p>
           </li>
           <li class="step">
             <span class="step__node" aria-hidden="true"></span>
@@ -375,70 +413,94 @@
     </div>
   </section>
 
-  <!-- 05 — SIMULATEUR -->
+  <!-- 06 — CE QUE REÇOIT VOTRE ACHETEUR -->
+  <section class="section buyer" id="acheteur" aria-labelledby="t-buyer">
+    <div class="wrap">
+      <p class="eyebrow" data-fade>06 — Ce que reçoit votre acheteur</p>
+      <h2 id="t-buyer" class="h2 buyer__title" data-split>Pas une formation de plus. Un outil qu'il construit.</h2>
+      <ul class="buyer__grid" data-stagger>
+        <li class="buyer__item"><span class="buyer__num">01</span><h3>Un workshop de 7&nbsp;jours</h3><p>Une étape par jour, une vidéo et une consigne. Il avance sans se perdre.</p></li>
+        <li class="buyer__item"><span class="buyer__num">02</span><h3>Son propre outil</h3><p>Il le construit lui-même, jour après jour, et le garde pour piloter son activité.</p></li>
+        <li class="buyer__item"><span class="buyer__num">03</span><h3>Un coach IA sur WhatsApp</h3><p>Il connaît ses données et lui dit quoi faire ensuite, à toute heure.</p></li>
+        <li class="buyer__item"><span class="buyer__num">04</span><h3>Un espace membre</h3><p>Les vidéos de votre méthode, rangées dans l'ordre où il en a besoin.</p></li>
+      </ul>
+      <!-- Captures (une de l'outil, une du coach) : à ajouter ici dans .buyer__shots, puis retirer « hidden ».
+      <div class="buyer__shots" hidden>
+        <figure><img src="assets/acheteur/outil.jpg" alt="L'outil construit par l'acheteur"></figure>
+        <figure><img src="assets/acheteur/coach.jpg" alt="Le coach IA sur WhatsApp"></figure>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- 07 — SIMULATEUR (deux modes) -->
   <section class="section sim pre-rise" id="simulateur" aria-labelledby="t-sim">
     <div class="sim__bg" aria-hidden="true"></div>
     <div class="wrap sim__grid">
       <div class="sim__copy">
-        <p class="eyebrow" data-fade>05 — Simulateur</p>
-        <h2 id="t-sim" class="h2" data-split>Ceux que vous laissez partir.</h2>
-        <p class="body" data-fade>Deux chiffres de votre activité suffisent.</p>
+        <p class="eyebrow" data-fade>07 — Simulateur</p>
+        <h2 id="t-sim" class="h2" data-split data-alt="Combien entrent chez vous&nbsp;?">Ceux que vous laissez partir.</h2>
+        <p class="body" data-fade data-alt="Deux hypothèses suffisent.">Deux chiffres de votre activité suffisent.</p>
+        <div class="sim__mode" data-fade><div class="mode" role="group" aria-label="Façon de brancher Loseless"><button class="mode__opt" type="button" data-mode-set="rattrapage" aria-pressed="true">En rattrapage</button><button class="mode__opt" type="button" data-mode-set="entree" aria-pressed="false">En porte d'entrée</button></div></div>
 
         <!-- Valeurs par défaut et seuil de la grille : constante SIMULATEUR en haut de main.js -->
         <div class="sim__fields" data-fade>
           <div class="field">
-            <div class="field__row"><label for="s-leads">Leads qualifiés par mois</label><output id="o-leads" for="s-leads">200</output></div>
+            <div class="field__row"><label for="s-leads" data-alt="Leads par mois">Leads qualifiés par mois</label><output id="o-leads" for="s-leads">200</output></div>
             <input class="range" type="range" id="s-leads" min="10" max="1000" step="10" value="200">
           </div>
           <div class="field">
-            <div class="field__row"><label for="s-nobudget">Part qui n'a pas le budget</label><output id="o-nobudget" for="s-nobudget">50&nbsp;%</output></div>
+            <div class="field__row"><label for="s-nobudget" data-alt="Part qui achète l'offre low-ticket">Part qui n'a pas le budget</label><output id="o-nobudget" for="s-nobudget">50&nbsp;%</output></div>
             <input class="range" type="range" id="s-nobudget" min="10" max="90" step="1" value="50">
           </div>
         </div>
       </div>
 
       <div class="sim__result" data-fade>
-        <p class="sim__label">Repartent sans rien / mois</p>
+        <p class="sim__label" data-alt="Acheteurs / mois">Repartent sans rien / mois</p>
         <p class="sim__value"><span id="sim-value">100</span> <span class="sim__unit" id="sim-unit">leads</span></p>
         <p class="sim__year" id="sim-year">soit 1&#8239;200 leads par an.</p>
         <div class="sim__grid-dots" id="sim-dots" aria-hidden="true"></div>
         <p class="sim__legend" id="sim-legend" hidden>1 point = 5 leads</p>
-        <p class="sim__sub">Chaque point orange est une personne qui voulait votre accompagnement. Aujourd'hui, elle repart sans rien acheter.</p>
-        <p class="sim__hook">Combien ils pourraient vous rapporter&nbsp;? Chez ECOM&nbsp;BOSS, ces leads ont déjà généré 100&#8239;000&nbsp;€ de chiffre d'affaires. On calcule votre potentiel avec vous, sur vos vrais chiffres.</p>
+        <p class="sim__sub" data-alt="Chaque point orange est un client qui entre chez vous par un premier achat, et qui peut monter vers votre high-ticket.">Chaque point orange est une personne qui voulait votre accompagnement. Aujourd'hui, elle repart sans rien acheter.</p>
+        <p class="sim__hook" data-show="rattrapage">Combien ils pourraient vous rapporter&nbsp;? Chez ECOM&nbsp;BOSS, ces leads ont déjà généré 100&#8239;000&nbsp;€ de chiffre d'affaires. On calcule votre potentiel avec vous, sur vos vrais chiffres.</p>
+        <p class="sim__note" data-show="rattrapage" data-ca-note hidden></p>
+        <p class="sim__disclaimer" data-show="entree">Hypothèses à ajuster. Ce n'est pas une promesse de résultat.</p>
         <p class="sim__cta"><a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Calculer mon potentiel">Calculer mon potentiel</span></a></p>
         <p class="sr-only" id="sim-live" aria-live="polite"></p>
       </div>
     </div>
   </section>
 
-  <!-- 06 — LA PREUVE -->
+  <!-- 08 — LA PREUVE -->
   <section class="section proof rise rise--dark" aria-labelledby="t-proof">
     <div class="rise__bg" aria-hidden="true"></div>
     <div class="wrap proof__inner">
-      <p class="eyebrow" data-fade>06 — La preuve</p>
+      <p class="eyebrow" data-fade>08 — La preuve</p>
       <h2 id="t-proof" class="h2 h2--mid" data-split>Déjà en place chez Gaspard Grosjean.</h2>
       <p class="proof__intro" data-fade>Fondateur d'ECOM&nbsp;BOSS, l'un des plus gros infopreneurs e-commerce français. Plus de 70&nbsp;000 abonnés sur Instagram. <a class="link link--strong" href="https://www.instagram.com/gaspardgrosjean/" target="_blank" rel="noopener">@gaspardgrosjean<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></p>
       <ul class="proof__stats" data-stagger>
         <li><span class="proof__num">+<span class="proof__count" data-to="400">400</span></span><span class="proof__label">ventes low-ticket</span></li>
-        <li><span class="proof__num"><span class="proof__count" data-to="100000">100&#8239;000</span><span class="proof__suffix">&nbsp;€</span></span><span class="proof__label">de chiffre d'affaires généré</span></li>
+        <li><span class="proof__num"><span class="proof__count" data-to="100000">100&#8239;000</span><span class="proof__suffix">&nbsp;€</span></span><span class="proof__label">de chiffre d'affaires généré</span><span class="proof__note" data-ca-note hidden></span></li>
         <li><span class="proof__num proof__num--zero">0</span><span class="proof__label">setter recruté de son côté</span></li>
       </ul>
+      <!-- Citation et photo de Gaspard : masquées tant qu'elles ne sont pas fournies. Remplacer le texte et la photo, puis décommenter.
       <figure class="proof__quote" data-fade>
         <blockquote><p>«&nbsp;[Citation de Gaspard, 2 phrases maximum]&nbsp;»</p></blockquote>
         <figcaption>
-          <span class="proof__avatar" aria-hidden="true"><!-- photo 48 × 48 : <img src="…" alt=""> --></span>
+          <span class="proof__avatar" aria-hidden="true">photo 48 × 48 : img src="…" alt=""</span>
           <span>Gaspard Grosjean, fondateur d'ECOM&nbsp;BOSS</span>
         </figcaption>
       </figure>
+      -->
     </div>
   </section>
 
-  <!-- 07 — LE MODÈLE -->
+  <!-- 09 — LE MODÈLE -->
   <section class="section model rise rise--light" id="modele" aria-labelledby="t-model">
     <div class="rise__bg" aria-hidden="true"></div>
     <div class="wrap model__grid">
       <div class="model__head">
-        <p class="eyebrow" data-fade>07 — Le modèle</p>
+        <p class="eyebrow" data-fade>09 — Le modèle</p>
         <h2 id="t-model" class="h2" data-split>Zéro coût d'entrée.</h2>
         <p class="promise model__promise" data-fade>On gagne seulement si vous gagnez.</p>
       </div>
@@ -469,12 +531,12 @@
     </div>
   </section>
 
-  <!-- 08 — FAQ -->
+  <!-- 10 — FAQ -->
   <section class="section faq" id="faq" aria-labelledby="t-faq">
     <div class="wrap faq__grid">
       <div class="faq__side">
         <div class="faq__head">
-          <p class="eyebrow" data-fade>08 — FAQ</p>
+          <p class="eyebrow" data-fade>10 — FAQ</p>
           <h2 id="t-faq" class="h2" data-split>Vos questions, sans détour.</h2>
         </div>
         <div class="faq__aside" data-fade>
@@ -490,9 +552,9 @@
           </div></div>
         </div>
         <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-2" id="faq-b2"><span class="faq__num">02</span><span class="faq__text">Combien de temps pour l'installer&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-2" id="faq-b2"><span class="faq__num">02</span><span class="faq__text">En rattrapage ou en porte d'entrée&nbsp;: comment choisir&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__panel" id="faq-2" role="region" aria-labelledby="faq-b2"><div class="faq__a">
-            <p><span class="ph">[À COMPLÉTER&nbsp;: délai de mise en place]</span></p>
+            <p>Si votre offre principale vend déjà bien, on se place derrière elle pour récupérer les «&nbsp;pas le budget&nbsp;». Si vous lancez votre funnel ou que vous voulez faire entrer plus de monde, l'offre low-ticket devient votre porte d'entrée. On en parle ensemble pendant l'appel.</p>
           </div></div>
         </div>
         <div class="faq__item">
@@ -510,36 +572,56 @@
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-5" id="faq-b5"><span class="faq__num">05</span><span class="faq__text">Qui crée l'offre low&#8209;ticket&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__panel" id="faq-5" role="region" aria-labelledby="faq-b5"><div class="faq__a">
-            <p><span class="ph">[À COMPLÉTER]</span></p>
+            <p>Nous. On construit votre offre low&#8209;ticket de A à Z&nbsp;: l'offre, la page, la vidéo, l'outil et le workshop, sous votre nom. Vous validez tout avant le lancement.</p>
           </div></div>
         </div>
         <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-6" id="faq-b6"><span class="faq__num">06</span><span class="faq__text">Comment vous êtes rémunérés&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-6" id="faq-b6"><span class="faq__num">06</span><span class="faq__text">Qu'est-ce que reçoit l'acheteur&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__panel" id="faq-6" role="region" aria-labelledby="faq-b6"><div class="faq__a">
+            <p>Un workshop de 7&nbsp;jours, un outil qu'il construit lui-même, un coach IA sur WhatsApp et un espace membre avec les vidéos de votre méthode.</p>
+          </div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-7" id="faq-b7"><span class="faq__num">07</span><span class="faq__text">Comment vous êtes rémunérés&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-7" role="region" aria-labelledby="faq-b7"><div class="faq__a">
             <p>Uniquement sur les ventes. Rien à payer pour démarrer, et vous gardez au moins 65&nbsp;% de chaque vente. Si ça ne vend pas, on ne gagne rien.</p>
+          </div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-8" id="faq-b8"><span class="faq__num">08</span><span class="faq__text">Sur quels outils vous appuyez-vous&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-8" role="region" aria-labelledby="faq-b8"><div class="faq__a">
+            <p>L'outil de vos acheteurs est construit sur Base44, dont Loseless est partenaire. Vous n'avez rien à installer.</p>
+          </div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-9" id="faq-b9"><span class="faq__num">09</span><span class="faq__text">Pour quels infopreneurs ça marche&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-9" role="region" aria-labelledby="faq-b9"><div class="faq__a">
+            <p>Ceux qui vendent un accompagnement high&#8209;ticket&nbsp;: pour récupérer les leads qui n'ont pas le budget, ou pour faire entrer plus de clients par une offre low&#8209;ticket.</p>
+          </div></div>
+        </div>
+        <!-- Questions masquées tant que la réponse n'est pas fournie (à réactiver avec un numéro dans l'ordre) :
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-2" id="faq-b2"><span class="faq__num">02</span><span class="faq__text">Combien de temps pour l'installer&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__panel" id="faq-2" role="region" aria-labelledby="faq-b2"><div class="faq__a">
+            <p>[À COMPLÉTER&nbsp;: délai de mise en place]</p>
           </div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-7" id="faq-b7"><span class="faq__num">07</span><span class="faq__text">Est-ce que je m'engage sur une durée&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__panel" id="faq-7" role="region" aria-labelledby="faq-b7"><div class="faq__a">
-            <p><span class="ph">[À COMPLÉTER]</span></p>
+            <p>[À COMPLÉTER]</p>
           </div></div>
         </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-8" id="faq-b8"><span class="faq__num">08</span><span class="faq__text">Pour quels infopreneurs ça marche&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-8" role="region" aria-labelledby="faq-b8"><div class="faq__a">
-            <p>Ceux qui vendent un accompagnement high&#8209;ticket et reçoivent régulièrement des leads qui n'ont pas le budget. <span class="ph">[À COMPLÉTER&nbsp;: critère minimum, par exemple un nombre de leads par mois]</span></p>
-          </div></div>
-        </div>
+        -->
       </div>
     </div>
   </section>
 
-  <!-- 09 — POUR QUI -->
+  <!-- 11 — POUR QUI -->
   <section class="section forwho pre-rise" id="pour-qui" aria-labelledby="t-forwho">
     <div class="wrap forwho__grid">
       <div>
-        <p class="eyebrow" data-fade>09 — Pour qui</p>
+        <p class="eyebrow" data-fade>11 — Pour qui</p>
         <h2 id="t-forwho" class="h2" data-split>On ne travaille pas avec tout le monde.</h2>
       </div>
       <p class="body forwho__text" data-fade>Loseless s'adresse aux business high&#8209;ticket qui font plus de 10&#8239;000&nbsp;€ de CA par mois. En dessous, votre volume de leads ne suffit pas pour que le système soit rentable pour vous.</p>
@@ -603,6 +685,6 @@
 <script src="vendor/SplitText.min.js" defer></script>
 <script src="vendor/CustomEase.min.js" defer></script>
 <script src="vendor/lenis.min.js" defer></script>
-<script src="main.js?v=202610081900" defer></script>
+<script src="main.js?v=202610181540" defer></script>
 </body>
 </html>

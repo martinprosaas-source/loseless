@@ -9,14 +9,24 @@
     bookingUrl: null,         // [À COMPLÉTER] lien de prise de rendez-vous (ex. Calendly)
   };
 
-  // Section 05 — simulateur (aucun montant affiché, uniquement des leads).
-  // defauts : position de départ des 2 curseurs (leads / mois, % sans budget).
+  // Section 07 — simulateur (aucun montant affiché, uniquement des leads ou des acheteurs).
+  // Un réglage par mode : bornes et position de départ des 2 curseurs.
+  //   rattrapage : leads / mois et % sans budget → leads perdus
+  //   entree     : leads / mois et % qui achète l'offre low-ticket → acheteurs
   // seuilGrille / leadsParPoint : au-delà de 300 leads, 1 point de la grille = 5 leads.
   const SIMULATEUR = {
-    defauts: { leads: 200, sansBudget: 50 },
+    modes: {
+      rattrapage: { leads: { min: 10, max: 1000, step: 10, defaut: 200 }, part: { min: 10, max: 90, step: 1, defaut: 50 } },
+      entree: { leads: { min: 50, max: 2000, step: 50, defaut: 300 }, part: { min: 1, max: 30, step: 1, defaut: 10 } },
+    },
     seuilGrille: 300,
     leadsParPoint: 5,
   };
+
+  // Ligne en petit sous le chiffre de 100 000 € (bandeau, « La preuve », simulateur).
+  // Tant que c'est null, la ligne reste masquée. Exemple :
+  //   { fr: 'Ventes low-ticket et upsells high-ticket compris.', en: 'Low-ticket sales and high-ticket upsells included.' }
+  const CHIFFRES = { precisionCA: null };
 
   // Section 01 — grand chiffre « [X %] des leads en appel repartent sans rien acheter ».
   // Mettre null pour réafficher le placeholder.
@@ -34,6 +44,9 @@
   const T = {
     fr: {
       perYear: n => `soit ${fmt.format(n)} leads par an.`,
+      buyers: n => (n > 1 ? 'acheteurs' : 'acheteur'),
+      buyersYear: n => `soit ${fmt.format(n)} acheteurs par an.`,
+      buyersLive: (n, y) => `${fmt.format(n)} ${n > 1 ? 'acheteurs' : 'acheteur'} par mois, soit ${fmt.format(y)} par an.`,
       live: (n, y) => `${fmt.format(n)} ${n > 1 ? 'leads repartent' : 'lead repart'} sans rien chaque mois, soit ${fmt.format(y)} par an.`,
       curtainAfter: 'Surtout « avec loseless »',
       curtainBefore: 'Surtout « aujourd\'hui »',
@@ -43,6 +56,9 @@
     },
     en: {
       perYear: n => `that’s ${fmt.format(n)} leads a year.`,
+      buyers: n => (n === 1 ? 'buyer' : 'buyers'),
+      buyersYear: n => `that’s ${fmt.format(n)} buyers a year.`,
+      buyersLive: (n, y) => `${fmt.format(n)} ${n === 1 ? 'buyer' : 'buyers'} a month, that’s ${fmt.format(y)} a year.`,
       live: (n, y) => `${fmt.format(n)} ${n > 1 ? 'leads walk' : 'lead walks'} away with nothing every month, that’s ${fmt.format(y)} a year.`,
       curtainAfter: 'Mostly “with loseless”',
       curtainBefore: 'Mostly “today”',
@@ -86,25 +102,94 @@
   }
 
   // ---------------------------------------------------------------
+  // Mode de la page : « rattrapage » (par défaut) ou « entree » (porte d'entrée).
+  // Un seul état pour toute la page : les sélecteurs (boucle, simulateur) et les cartes
+  // de la section « Deux façons » changent tous ce même état. Lien direct : ?mode=entree
+  // Les textes du mode porte d'entrée sont dans le HTML (data-alt, data-alt-h / data-alt-p
+  // sur les étapes de la boucle), pour que la version anglaise les traduise aussi.
+  // ---------------------------------------------------------------
+  const MODES = ['rattrapage', 'entree'];
+  const modeListeners = [];
+  let mode = 'rattrapage';
+
+  function initMode() {
+    // étapes de la boucle : les textes alternatifs passent sur le titre et le paragraphe
+    $$('.loop__step[data-alt-h]').forEach(li => {
+      $('h3', li).dataset.alt = li.dataset.altH;
+      $('p', li).dataset.alt = li.dataset.altP;
+    });
+    // on garde le texte d'origine (mode rattrapage) avant toute découpe en lignes
+    $$('[data-alt]').forEach(el => { el._modeA = el.innerHTML; });
+    $$('[data-mode-set]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.modeSet)));
+    let start = 'rattrapage';
+    try { if (new URLSearchParams(location.search).get('mode') === 'entree') start = 'entree'; } catch (e) {}
+    setMode(start, { force: true, silent: true });
+  }
+
+  function setMode(m, opts = {}) {
+    if (!MODES.includes(m) || (m === mode && !opts.force)) return;
+    const changed = m !== mode;
+    mode = m;
+    root.dataset.mode = m;
+    $$('[data-mode-set]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modeSet === m)));
+    if (changed) {
+      $$('[data-alt]').forEach(el => {
+        const html = m === 'entree' ? el.dataset.alt : el._modeA;
+        const split = el._split; // titres découpés en lignes (SplitText) : on redécoupe
+        if (split) split.revert();
+        el.innerHTML = html;
+        if (split) split.split();
+        if (!opts.silent) { el.classList.remove('is-mode-in'); void el.offsetWidth; el.classList.add('is-mode-in'); }
+      });
+    }
+    modeListeners.forEach(fn => fn(m));
+    if (!opts.silent) {
+      try {
+        const u = new URL(location.href);
+        if (m === 'entree') u.searchParams.set('mode', 'entree'); else u.searchParams.delete('mode');
+        history.replaceState(history.state, '', u);
+      } catch (e) {}
+      refresh();
+    }
+  }
+
+  // Ligne de précision sous le chiffre de 100 000 € : affichée seulement si elle est renseignée
+  function applyChiffres() {
+    const t = CHIFFRES.precisionCA && CHIFFRES.precisionCA[LANG];
+    if (!t) return;
+    $$('[data-ca-note]').forEach(el => { el.textContent = t; el.hidden = false; });
+  }
+
+  // ---------------------------------------------------------------
   // Simulateur (fonctionne avec ou sans animations)
   // ---------------------------------------------------------------
   function initSim() {
-    const leadsIn = $('#s-leads'), sansBudgetIn = $('#s-nobudget');
-    const leadsOut = $('#o-leads'), sansBudgetOut = $('#o-nobudget');
+    const leadsIn = $('#s-leads'), partIn = $('#s-nobudget');
+    const leadsOut = $('#o-leads'), partOut = $('#o-nobudget');
     const valueEl = $('#sim-value'), unitEl = $('#sim-unit'), yearEl = $('#sim-year');
     const grid = $('#sim-dots'), legend = $('#sim-legend'), live = $('#sim-live');
     const leadsWord = n => (n > 1 ? 'leads' : 'lead');
     const shown = { v: 0 };
     const dots = [];
+    // position des curseurs gardée pour chaque mode (on retrouve ses réglages en revenant)
+    const state = {};
+    Object.entries(SIMULATEUR.modes).forEach(([k, c]) => { state[k] = { leads: c.leads.defaut, part: c.part.defaut }; });
+    let cur = null;
 
-    leadsIn.value = SIMULATEUR.defauts.leads;
-    sansBudgetIn.value = SIMULATEUR.defauts.sansBudget;
+    function configure(m) {
+      if (cur) state[cur] = { leads: +leadsIn.value, part: +partIn.value };
+      cur = m;
+      const c = SIMULATEUR.modes[m];
+      [[leadsIn, c.leads, state[m].leads], [partIn, c.part, state[m].part]].forEach(([el, r, v]) => {
+        el.min = r.min; el.max = r.max; el.step = r.step; el.value = v;
+      });
+    }
 
     // Grille : on ne crée des points que lorsqu'il en faut plus, puis on les masque / colore.
-    function drawGrid(leads, perdus) {
+    function drawGrid(leads, orangeCount) {
       const parPoint = leads > SIMULATEUR.seuilGrille ? SIMULATEUR.leadsParPoint : 1;
       const total = Math.ceil(leads / parPoint);
-      const orange = Math.round(perdus / parPoint);
+      const orange = Math.round(orangeCount / parPoint);
       while (dots.length < total) {
         const d = document.createElement('i');
         grid.appendChild(d);
@@ -117,39 +202,44 @@
       legend.hidden = parPoint === 1;
     }
 
+    // rattrapage : leads perdus = leads × part sans budget ; porte d'entrée : acheteurs = leads × part qui achète
     function compute() {
-      [leadsIn, sansBudgetIn].forEach(i => {
+      [leadsIn, partIn].forEach(i => {
         i.style.setProperty('--p', ((i.value - i.min) / (i.max - i.min)) * 100 + '%');
       });
-      const leads = +leadsIn.value, part = +sansBudgetIn.value;
-      const perdus = Math.round((leads * part) / 100);
+      const leads = +leadsIn.value, part = +partIn.value;
+      const n = Math.round((leads * part) / 100);
+      const entree = cur === 'entree';
       leadsOut.textContent = fmt.format(leads);
-      sansBudgetOut.textContent = pct(part);
-      unitEl.textContent = leadsWord(perdus);
-      yearEl.textContent = T.perYear(perdus * 12);
-      drawGrid(leads, perdus);
+      partOut.textContent = pct(part);
+      unitEl.textContent = entree ? T.buyers(n) : leadsWord(n);
+      yearEl.textContent = entree ? T.buyersYear(n * 12) : T.perYear(n * 12);
+      drawGrid(leads, n);
 
       if (motion) {
         gsap.to(shown, {
-          v: perdus, duration: 0.6, ease: 'lossless', overwrite: true,
+          v: n, duration: 0.6, ease: 'lossless', overwrite: true,
           onUpdate: () => { valueEl.textContent = fmt.format(Math.round(shown.v)); },
         });
       } else {
-        shown.v = perdus;
-        valueEl.textContent = fmt.format(perdus);
+        shown.v = n;
+        valueEl.textContent = fmt.format(n);
       }
-      return perdus;
+      return n;
     }
 
-    [leadsIn, sansBudgetIn].forEach(i => {
+    [leadsIn, partIn].forEach(i => {
       i.addEventListener('input', compute);
       i.addEventListener('change', () => {
         const n = compute();
-        live.textContent = T.live(n, n * 12);
+        live.textContent = cur === 'entree' ? T.buyersLive(n, n * 12) : T.live(n, n * 12);
       });
     });
+    configure(mode);
     compute();
+    modeListeners.push(m => { if (m !== cur) { configure(m); compute(); } });
   }
+
 
   // Poignée du rideau (souris, doigt, clavier), avec ou sans animations
   const curtain = { touched: false, set: () => {} };
@@ -757,7 +847,7 @@
   // Titres ligne à ligne, paragraphes en fondu, groupes en cascade
   function reveals() {
     $$('[data-split]').forEach(el => {
-      SplitText.create(el, {
+      el._split = SplitText.create(el, {
         type: 'lines', mask: 'lines', linesClass: 'split-line', autoSplit: true,
         onSplit: self => gsap.from(self.lines, {
           yPercent: 112, duration: 1.1, stagger: 0.08,
@@ -999,6 +1089,8 @@
   // ---------------------------------------------------------------
   function start() {
     applyProblemStats();
+    applyChiffres();
+    initMode();
     initFilm();
     // avant les animations : la FAQ se replie et change la hauteur de page
     initSim();
