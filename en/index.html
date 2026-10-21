@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="../styles.css?v=202610181540">
+<link rel="stylesheet" href="../styles.css?v=202610211600">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 </head>
 <body>
@@ -210,13 +210,8 @@
       <div class="loop__visual" aria-hidden="true">
         <div class="loop__stage">
           <svg class="loop__ring" viewBox="0 0 100 100">
-            <defs>
-              <mask id="gap-loop" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">
-                <rect x="-10" y="-10" width="120" height="120" fill="#fff"/>
-                <circle class="loop__gap" cx="76.87" cy="23.13" r="16" fill="#000"/>
-              </mask>
-            </defs>
-            <g mask="url(#gap-loop)">
+            <!-- encoche autour du point : disque couleur du fond (pas de masque SVG, trop coûteux à redessiner à chaque image) -->
+            <g>
               <circle class="loop__track" cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width=".4" opacity="0"/>
               <g class="loop__ticks">
                 <circle cx="76.87" cy="23.13" r="1.1"/>
@@ -229,6 +224,7 @@
               </g>
               <circle class="loop__arc" cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" pathLength="100" stroke-dasharray="100 100" stroke-dashoffset="0" transform="rotate(-45 50 50)"/>
             </g>
+            <circle class="loop__gap" cx="76.87" cy="23.13" r="16"/>
             <circle class="loop__dot" cx="76.87" cy="23.13" r="13" fill="#D2401C"/>
           </svg>
           <ul class="loop__labels">
@@ -634,15 +630,9 @@
     <div class="wrap cta__inner">
       <div class="cta__ring" aria-hidden="true">
         <svg viewBox="0 0 100 100">
-          <defs>
-            <mask id="gap-cta" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">
-              <rect x="-10" y="-10" width="120" height="120" fill="#fff"/>
-              <circle class="cta__gap" cx="76.87" cy="23.13" r="16" fill="#000"/>
-            </mask>
-          </defs>
-          <g mask="url(#gap-cta)">
-            <circle class="cta__stroke" cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" pathLength="100" stroke-dasharray="100 100" stroke-dashoffset="0" transform="rotate(-45 50 50)"/>
-          </g>
+          <!-- encoche autour du point : disque couleur du fond (pas de masque SVG) -->
+          <circle class="cta__stroke" cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="16" pathLength="100" stroke-dasharray="100 100" stroke-dashoffset="0" transform="rotate(-45 50 50)"/>
+          <circle class="cta__gap" cx="76.87" cy="23.13" r="16"/>
           <circle class="cta__dot" cx="76.87" cy="23.13" r="13" fill="#D2401C"/>
         </svg>
       </div>
@@ -685,6 +675,6 @@
 <script src="../vendor/SplitText.min.js" defer></script>
 <script src="../vendor/CustomEase.min.js" defer></script>
 <script src="../vendor/lenis.min.js" defer></script>
-<script src="../main.js?v=202610181540" defer></script>
+<script src="../main.js?v=202610211600" defer></script>
 </body>
 </html>

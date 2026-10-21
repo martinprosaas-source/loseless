@@ -394,6 +394,7 @@ html[lang="en"] .lang:has(.lang__opt:not([aria-current]):hover) .lang__thumb { t
 /* calques créés dès le chargement (pas au premier scroll) */
 html.motion .hero__clip, html.motion .hero__stage { will-change: transform; }
 .hero.is-exiting { background: transparent; min-height: var(--hero-h); }
+.hero.is-gone { visibility: hidden; }
 /* le disque ne dessine rien (pas de fond) : simple contour de découpe, quasi gratuit */
 .hero.is-exiting .hero__clip {
   position: absolute; left: 0; top: 0;
@@ -708,6 +709,7 @@ html[lang="en"] .figure__num { font-variant-numeric: normal; }
   color: var(--encre);
 }
 .loop__ring { width: 100%; height: 100%; overflow: visible; }
+.loop__gap { fill: var(--papier); }
 .loop__track { color: rgba(107, 102, 96, .35); }
 .loop__ticks circle { fill: var(--pierre); transition: fill .4s var(--ease); }
 .loop__ticks circle.is-done { fill: var(--encre); }
@@ -857,14 +859,15 @@ html.motion .is-mode-in { animation: mode-in .55s var(--ease) both; }
   padding: clamp(28px, 3vw, 44px);
   border-radius: 28px;
   box-shadow: inset 0 0 0 1px rgba(18, 18, 18, .14);
-  transition: background-color .6s var(--ease), box-shadow .6s var(--ease), transform .6s var(--ease);
+  /* survol sur « translate » (pas « transform », animé par GSAP à l'apparition des cartes) */
+  transition: background-color .6s var(--ease), box-shadow .6s var(--ease), translate .6s var(--ease);
 }
 html:not([data-mode="entree"]) .way[data-way="rattrapage"],
 html[data-mode="entree"] .way[data-way="entree"] {
   background: var(--craie);
   box-shadow: inset 0 0 0 1.5px var(--encre);
 }
-.way:hover { transform: translateY(-3px); }
+@media (hover: hover) { .way:hover { translate: 0 -3px; } }
 .way__label {
   display: flex; align-items: center; gap: 10px;
   font: 700 13px/1.2 var(--sans);
@@ -1504,7 +1507,8 @@ html[lang="en"] .proof__count { font-variant-numeric: normal; } /* sinon « 100 
   pointer-events: none;
 }
 .cta__inner > *:not(.cta__ring) { position: relative; }
-.cta__ring svg { width: 100%; height: 100%; overflow: visible; }
+.cta__ring svg { width: 100%; height: 100%; overflow: visible; will-change: transform; }
+.cta__gap { fill: var(--encre); }
 .cta__inner {
   position: relative;
   min-height: calc(92vh - var(--overlap));

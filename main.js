@@ -629,7 +629,8 @@
         hero.classList.add('is-exiting');
       } else {
         hero.classList.remove('is-exiting');
-        disc.style.transform = stage.style.transform = disc.style.visibility = '';
+        disc.style.transform = stage.style.transform = '';
+        hero.classList.remove('is-gone');
       }
     };
 
@@ -647,8 +648,9 @@
       const cy = geo.cy + geo.d * Math.sin(a);
       const rMax = Math.hypot(Math.max(cx, geo.w - cx), Math.max(cy, geo.h - cy));
       const s = Math.max(0, (rMax + 4) * (1 - st.p)) / geo.R; // +4 px : le coin le plus loin reste couvert au repos
-      if (s < 0.002) { disc.style.visibility = 'hidden'; return; }
-      disc.style.visibility = '';
+      const gone = s < 0.002;
+      hero.classList.toggle('is-gone', gone);
+      if (gone) return;
       disc.style.transform = `translate(${(cx - geo.R).toFixed(2)}px, ${(cy - geo.R).toFixed(2)}px) scale(${s.toFixed(5)})`;
       stage.style.transform = `translate(${(geo.R - cx / s).toFixed(2)}px, ${(geo.R - cy / s).toFixed(2)}px) scale(${(1 / s).toFixed(5)})`;
     };
@@ -966,7 +968,8 @@
   // CTA : le grand anneau revient et se referme
   function ctaRing() {
     gsap.timeline({
-      scrollTrigger: { trigger: '.cta', start: 'top 75%', end: 'top 5%', scrub: 0.8 },
+      // fin calée sur le bas de page : l'anneau se referme complètement et l'animation s'arrête
+      scrollTrigger: { trigger: '.cta', start: 'top 75%', end: () => 'max', scrub: 0.8, invalidateOnRefresh: true },
     })
       .fromTo('.cta__stroke', { attr: { 'stroke-dashoffset': 100 } }, { attr: { 'stroke-dashoffset': 0 }, ease: 'none', duration: 1 }, 0)
       .fromTo('.cta__ring svg', { rotation: -120 }, { rotation: 0, ease: 'none', duration: 1.05 }, 0)
