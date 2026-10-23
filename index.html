@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=202610211600">
+<link rel="stylesheet" href="styles.css?v=202610231530">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 </head>
 <body>
@@ -104,8 +104,7 @@
       <h1 class="hero__title">Vos «&nbsp;pas le budget&nbsp;»<br class="br-desk"> rapportent aussi.</h1>
       <div class="hero__bottom">
         <div class="hero__copy">
-          <p class="hero__promise promise">On construit votre offre low-ticket, derrière votre offre ou en porte d'entrée de votre funnel. Nos setters la vendent. Vous encaissez.</p>
-          <p class="hero__text">Les leads qui n'ont pas le budget pour votre accompagnement ne repartent plus les mains vides. Nos setters les rappellent et leur proposent une offre à leur portée, sous votre nom. Vous touchez 65&nbsp;% de chaque vente, sans rien recruter ni gérer.</p>
+          <p class="hero__promise promise">Nos setters leur vendent une offre <span class="nobr">low-ticket</span>, sous votre nom. Vous touchez 65&nbsp;% de chaque vente.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Réserver un appel">Réserver un appel</span></a>
             <a class="link link--strong" href="#simulateur">Calculer ce que je perds</a>
@@ -130,27 +129,28 @@
     <div class="wrap">
       <div class="figures__top" data-fade>
         <h2 class="figures__title" id="t-figures">Loseless en chiffres</h2>
+        <p class="figures__date"><span class="figures__dot" aria-hidden="true"></span>Chiffres au 23&nbsp;octobre 2026</p>
       </div>
       <ul class="figures__list" data-stagger>
-        <li class="figure">
-          <span class="figure__num"><span data-count="100000" data-suffix="&nbsp;€">100&#8239;000&nbsp;€</span></span>
-          <span class="figure__label">de chiffre d'affaires généré</span>
+        <li class="figure figure--lead">
+          <span class="figure__kicker">Chiffre d'affaires généré</span>
+          <span class="figure__num"><span class="figure__plus">+</span><span data-count="150000" data-suffix="&nbsp;€">150&nbsp;000&nbsp;€</span></span>
+          <span class="figure__label">pour nos partenaires, avec leur offre low&#8209;ticket.</span>
           <span class="figure__note" data-ca-note hidden></span>
         </li>
         <li class="figure">
-          <span class="figure__num"><span data-count="400" data-prefix="+">+400</span></span>
-          <span class="figure__label">ventes low&#8209;ticket conclues</span>
+          <span class="figure__kicker">Ventes</span>
+          <span class="figure__num"><span data-count="800">800</span></span>
+          <span class="figure__label">ventes low&#8209;ticket conclues par nos setters.</span>
         </li>
         <li class="figure">
-          <span class="figure__num"><span data-count="1">1</span></span>
-          <span class="figure__label">seul partenaire. Et déjà ces résultats.</span>
+          <span class="figure__kicker">Partenaires</span>
+          <span class="figure__num"><span data-count="3">3</span></span>
+          <span class="figure__label">business high&#8209;ticket nous font déjà confiance.</span>
         </li>
       </ul>
       <div class="figures__foot" data-fade>
-        <div class="figures__context">
-          <p>Avec notre premier partenaire, Gaspard Grosjean, fondateur d'ECOM&nbsp;BOSS.</p>
-          <p class="figures__date">Chiffres au 8&nbsp;octobre 2026</p>
-        </div>
+        <p class="figures__context">Dont notre premier partenaire, Gaspard Grosjean, fondateur d'ECOM&nbsp;BOSS.</p>
         <a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Devenir le prochain partenaire">Devenir le prochain partenaire</span></a>
       </div>
     </div>
@@ -409,31 +409,12 @@
     </div>
   </section>
 
-  <!-- 06 — CE QUE REÇOIT VOTRE ACHETEUR -->
-  <section class="section buyer" id="acheteur" aria-labelledby="t-buyer">
-    <div class="wrap">
-      <p class="eyebrow" data-fade>06 — Ce que reçoit votre acheteur</p>
-      <h2 id="t-buyer" class="h2 buyer__title" data-split>Pas une formation de plus. Un outil qu'il construit.</h2>
-      <ul class="buyer__grid" data-stagger>
-        <li class="buyer__item"><span class="buyer__num">01</span><h3>Un workshop de 7&nbsp;jours</h3><p>Une étape par jour, une vidéo et une consigne. Il avance sans se perdre.</p></li>
-        <li class="buyer__item"><span class="buyer__num">02</span><h3>Son propre outil</h3><p>Il le construit lui-même, jour après jour, et le garde pour piloter son activité.</p></li>
-        <li class="buyer__item"><span class="buyer__num">03</span><h3>Un coach IA sur WhatsApp</h3><p>Il connaît ses données et lui dit quoi faire ensuite, à toute heure.</p></li>
-        <li class="buyer__item"><span class="buyer__num">04</span><h3>Un espace membre</h3><p>Les vidéos de votre méthode, rangées dans l'ordre où il en a besoin.</p></li>
-      </ul>
-      <!-- Captures (une de l'outil, une du coach) : à ajouter ici dans .buyer__shots, puis retirer « hidden ».
-      <div class="buyer__shots" hidden>
-        <figure><img src="assets/acheteur/outil.jpg" alt="L'outil construit par l'acheteur"></figure>
-        <figure><img src="assets/acheteur/coach.jpg" alt="Le coach IA sur WhatsApp"></figure>
-      </div> -->
-    </div>
-  </section>
-
-  <!-- 07 — SIMULATEUR (deux modes) -->
+  <!-- 06 — SIMULATEUR (deux modes) -->
   <section class="section sim pre-rise" id="simulateur" aria-labelledby="t-sim">
     <div class="sim__bg" aria-hidden="true"></div>
     <div class="wrap sim__grid">
       <div class="sim__copy">
-        <p class="eyebrow" data-fade>07 — Simulateur</p>
+        <p class="eyebrow" data-fade>06 — Simulateur</p>
         <h2 id="t-sim" class="h2" data-split data-alt="Combien entrent chez vous&nbsp;?">Ceux que vous laissez partir.</h2>
         <p class="body" data-fade data-alt="Deux hypothèses suffisent.">Deux chiffres de votre activité suffisent.</p>
         <div class="sim__mode" data-fade><div class="mode" role="group" aria-label="Façon de brancher Loseless"><button class="mode__opt" type="button" data-mode-set="rattrapage" aria-pressed="true">En rattrapage</button><button class="mode__opt" type="button" data-mode-set="entree" aria-pressed="false">En porte d'entrée</button></div></div>
@@ -471,7 +452,7 @@
   <section class="section proof rise rise--dark" aria-labelledby="t-proof">
     <div class="rise__bg" aria-hidden="true"></div>
     <div class="wrap proof__inner">
-      <p class="eyebrow" data-fade>08 — La preuve</p>
+      <p class="eyebrow" data-fade>07 — La preuve</p>
       <h2 id="t-proof" class="h2 h2--mid" data-split>Déjà en place chez Gaspard Grosjean.</h2>
       <p class="proof__intro" data-fade>Fondateur d'ECOM&nbsp;BOSS, l'un des plus gros infopreneurs e-commerce français. Plus de 70&nbsp;000 abonnés sur Instagram. <a class="link link--strong" href="https://www.instagram.com/gaspardgrosjean/" target="_blank" rel="noopener">@gaspardgrosjean<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a></p>
       <ul class="proof__stats" data-stagger>
@@ -496,7 +477,7 @@
     <div class="rise__bg" aria-hidden="true"></div>
     <div class="wrap model__grid">
       <div class="model__head">
-        <p class="eyebrow" data-fade>09 — Le modèle</p>
+        <p class="eyebrow" data-fade>08 — Le modèle</p>
         <h2 id="t-model" class="h2" data-split>Zéro coût d'entrée.</h2>
         <p class="promise model__promise" data-fade>On gagne seulement si vous gagnez.</p>
       </div>
@@ -527,12 +508,12 @@
     </div>
   </section>
 
-  <!-- 10 — FAQ -->
+  <!-- 09 — FAQ -->
   <section class="section faq" id="faq" aria-labelledby="t-faq">
     <div class="wrap faq__grid">
       <div class="faq__side">
         <div class="faq__head">
-          <p class="eyebrow" data-fade>10 — FAQ</p>
+          <p class="eyebrow" data-fade>09 — FAQ</p>
           <h2 id="t-faq" class="h2" data-split>Vos questions, sans détour.</h2>
         </div>
         <div class="faq__aside" data-fade>
@@ -617,7 +598,7 @@
   <section class="section forwho pre-rise" id="pour-qui" aria-labelledby="t-forwho">
     <div class="wrap forwho__grid">
       <div>
-        <p class="eyebrow" data-fade>11 — Pour qui</p>
+        <p class="eyebrow" data-fade>10 — Pour qui</p>
         <h2 id="t-forwho" class="h2" data-split>On ne travaille pas avec tout le monde.</h2>
       </div>
       <p class="body forwho__text" data-fade>Loseless s'adresse aux business high&#8209;ticket qui font plus de 10&#8239;000&nbsp;€ de CA par mois. En dessous, votre volume de leads ne suffit pas pour que le système soit rentable pour vous.</p>
@@ -675,6 +656,6 @@
 <script src="vendor/SplitText.min.js" defer></script>
 <script src="vendor/CustomEase.min.js" defer></script>
 <script src="vendor/lenis.min.js" defer></script>
-<script src="main.js?v=202610211600" defer></script>
+<script src="main.js?v=202610231530" defer></script>
 </body>
 </html>

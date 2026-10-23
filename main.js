@@ -38,7 +38,10 @@
   // Langue de la page (<html lang="fr"> ou <html lang="en">) : textes et formats de nombres
   const LANG = (root.lang || 'fr').slice(0, 2) === 'en' ? 'en' : 'fr';
   const LOCALE = LANG === 'en' ? 'en-US' : 'fr-FR';
-  const fmt = new Intl.NumberFormat(LOCALE, { maximumFractionDigits: 0 });
+  // espace insécable classique au lieu de l'espace fine (U+202F), absente de la police : Safari l'affichait sans largeur (« 150000 »)
+  const nbsp = str => str.replace(/\u202f/g, '\u00a0');
+  const fmt0 = new Intl.NumberFormat(LOCALE, { maximumFractionDigits: 0 });
+  const fmt = { format: n => nbsp(fmt0.format(n)) };
   const pct = n => (LANG === 'en' ? `${n}%` : `${n}\u00a0%`);
   const eur = n => (LANG === 'en' ? `€${fmt.format(n)}` : `${fmt.format(n)}\u00a0€`);
   const T = {
@@ -338,7 +341,7 @@
       const f = new Intl.NumberFormat(LOCALE, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
       const prefix = el.dataset.prefix || '';
       const suffix = el.dataset.suffix || '';
-      const out = v => { el.textContent = prefix + f.format(v) + suffix; };
+      const out = v => { el.textContent = prefix + nbsp(f.format(v)) + suffix; };
 
       if (!motion) { out(n); return; }
       const o = { v: 0 };
@@ -576,7 +579,7 @@
     const split = SplitText.create('.hero__title', { type: 'words', mask: 'words' });
     // une fois le titre en place, on retire les masques (sinon les jambages p, y, g sont rognés)
     gsap.from(split.words, { yPercent: 112, duration: 1.2, stagger: 0.09, onComplete: () => split.revert() });
-    gsap.from(['.hero__tag', '.hero__promise', '.hero__text', '.hero__ctas'], {
+    gsap.from(['.hero__tag', '.hero__promise', '.hero__ctas'], {
       autoAlpha: 0, y: 20, duration: 1, stagger: 0.08, delay: 0.3,
     });
     gsap.from('.hero__film', { autoAlpha: 0, y: 40, scale: 0.96, duration: 1.3, delay: 0.4 });

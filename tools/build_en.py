@@ -56,11 +56,9 @@ INDEX = [
     ('<p class="hero__tag">Agence d\'affiliation pour business high-ticket</p>',
      '<p class="hero__tag">Affiliate agency for high-ticket businesses</p>'),
     ('<h1 class="hero__title">Vos «&nbsp;pas le budget&nbsp;»<br class="br-desk"> rapportent aussi.</h1>',
-     '<h1 class="hero__title">Your <span class="nobr">“no budget”</span> leads<br class="br-desk"> still pay.</h1>'),
-    ('On construit votre offre low-ticket, derrière votre offre ou en porte d\'entrée de votre funnel. Nos setters la vendent. Vous encaissez.</p>',
-     'We build your low-ticket offer, behind your main offer or as the front door of your funnel. Our setters sell it. You get paid.</p>'),
-    ('Les leads qui n\'ont pas le budget pour votre accompagnement ne repartent plus les mains vides. Nos setters les rappellent et leur proposent une offre à leur portée, sous votre nom. Vous touchez 65&nbsp;% de chaque vente, sans rien recruter ni gérer.',
-     'Leads who can’t afford your program no longer leave empty-handed. Our setters call them back and offer them something within their budget, under your name. You get 65% of every sale, with nothing to hire or manage.'),
+     '<h1 class="hero__title">Your <span class="nobr">“no budget”</span><br class="br-desk"> leads still pay.</h1>'),
+    ('Nos setters leur vendent une offre <span class="nobr">low-ticket</span>, sous votre nom. Vous touchez 65&nbsp;% de chaque vente.</p>',
+     'Our setters sell them a <span class="nobr">low-ticket</span> offer, under your name. You get 65% of every sale.</p>'),
     ('>Calculer ce que je perds</a>', '>See what I’m losing</a>'),
     ('<!-- Film : boucle muette dans le hero ; « Activer le son » le relance au début, avec le son -->',
      '<!-- Film: muted loop in the hero; “Turn on sound” restarts it from the beginning, with sound -->'),
@@ -70,14 +68,17 @@ INDEX = [
 
     # Chiffres (après le hero)
     ('>Loseless en chiffres</h2>', '>Loseless in numbers</h2>'),
-    ('<span data-count="100000" data-suffix="&nbsp;€">100&#8239;000&nbsp;€</span>',
-     '<span data-count="100000" data-prefix="€">€100,000</span>'),
-    ('<span class="figure__label">de chiffre d\'affaires généré</span>', '<span class="figure__label">in revenue generated</span>'),
-    ('>ventes low&#8209;ticket conclues</span>', '>low&#8209;ticket sales closed</span>'),
-    ('>seul partenaire. Et déjà ces résultats.</span>', '>partner so far. And already these results.</span>'),
-    ('Avec notre premier partenaire, Gaspard Grosjean, fondateur d\'ECOM&nbsp;BOSS.',
-     'With our first partner, Gaspard Grosjean, founder of ECOM&nbsp;BOSS.'),
-    ('Chiffres au 8&nbsp;octobre 2026', 'Figures as of October 8, 2026'),
+    ('<span data-count="150000" data-suffix="&nbsp;€">150&nbsp;000&nbsp;€</span>',
+     '<span data-count="150000" data-prefix="€">€150,000</span>'),
+    ('>Chiffre d\'affaires généré</span>', '>Revenue generated</span>'),
+    ('>pour nos partenaires, avec leur offre low&#8209;ticket.</span>', '>for our partners, with their low&#8209;ticket offer.</span>'),
+    ('<span class="figure__kicker">Ventes</span>', '<span class="figure__kicker">Sales</span>'),
+    ('>ventes low&#8209;ticket conclues par nos setters.</span>', '>low&#8209;ticket sales closed by our setters.</span>'),
+    ('<span class="figure__kicker">Partenaires</span>', '<span class="figure__kicker">Partners</span>'),
+    ('>business high&#8209;ticket nous font déjà confiance.</span>', '>high&#8209;ticket businesses already trust us.</span>'),
+    ('Dont notre premier partenaire, Gaspard Grosjean, fondateur d\'ECOM&nbsp;BOSS.',
+     'Including our first partner, Gaspard Grosjean, founder of ECOM&nbsp;BOSS.'),
+    ('Chiffres au 23&nbsp;octobre 2026', 'Figures as of October 23, 2026'),
     ('data-text="Devenir le prochain partenaire">Devenir le prochain partenaire</span>',
      'data-text="Become our next partner">Become our next partner</span>'),
 
@@ -156,7 +157,7 @@ INDEX = [
      '<h3>Tracking &amp; hand-back</h3>\n            <p>We track the results with you and fine-tune. Buyers who are ready for your program are sent back to you.</p>'),
 
     # 05 — Simulateur
-    ('07 — Simulateur', '07 — Simulator'),
+    ('06 — Simulateur', '06 — Simulator'),
     ('Ceux que vous laissez partir.', 'The ones you let walk away.'),
     ('Deux chiffres de votre activité suffisent.', 'Two numbers from your business are all it takes.'),
     ('>Leads qualifiés par mois</label>', '>Qualified leads per month</label>'),
@@ -172,7 +173,7 @@ INDEX = [
     ('data-text="Calculer mon potentiel">Calculer mon potentiel</span>', 'data-text="Calculate my potential">Calculate my potential</span>'),
 
     # 06 — La preuve
-    ('08 — La preuve', '08 — Proof'),
+    ('07 — La preuve', '07 — Proof'),
     ('Déjà en place chez Gaspard Grosjean.', 'Already live with Gaspard Grosjean.'),
     ('Fondateur d\'ECOM&nbsp;BOSS, l\'un des plus gros infopreneurs e-commerce français. Plus de 70&nbsp;000 abonnés sur Instagram.',
      'Founder of ECOM&nbsp;BOSS, one of France’s biggest e-commerce educators. Over 70,000 followers on Instagram.'),
@@ -184,7 +185,7 @@ INDEX = [
     ('<span>Gaspard Grosjean, fondateur d\'ECOM&nbsp;BOSS</span>', '<span>Gaspard Grosjean, founder of ECOM&nbsp;BOSS</span>'),
 
     # 07 — Le modèle
-    ('09 — Le modèle', '09 — The model'),
+    ('08 — Le modèle', '08 — The model'),
     ('Zéro coût d\'entrée.', 'Zero upfront cost.'),
     ('On gagne seulement si vous gagnez.', 'We only win when you win.'),
     ('<span class="model__big">65&nbsp;%</span><span class="model__small">pour vous, sur chaque vente</span>',
@@ -272,19 +273,6 @@ INDEX = [
     ('En place chez un deuxième partenaire e-commerce.', 'Live with a second e-commerce partner.'),
     ('Afficher la page en mode porte d\'entrée', 'Show the page in front-door mode'),
     ('Cliquez sur une carte&nbsp;: la boucle et le simulateur s\'adaptent à votre cas.', 'Click a card: the loop and the simulator adapt to your case.'),
-    # 06 — Ce que reçoit votre acheteur
-    ('06 — Ce que reçoit votre acheteur', '06 — What your buyer gets'),
-    ('Pas une formation de plus. Un outil qu\'il construit.', 'Not another course. A tool they build.'),
-    ('<h3>Un workshop de 7&nbsp;jours</h3><p>Une étape par jour, une vidéo et une consigne. Il avance sans se perdre.</p>',
-     '<h3>A 7-day workshop</h3><p>One step a day, with a video and a clear task. They move forward without getting lost.</p>'),
-    ('<h3>Son propre outil</h3><p>Il le construit lui-même, jour après jour, et le garde pour piloter son activité.</p>',
-     '<h3>Their own tool</h3><p>They build it themselves, day by day, and keep it to run their business.</p>'),
-    ('<h3>Un coach IA sur WhatsApp</h3><p>Il connaît ses données et lui dit quoi faire ensuite, à toute heure.</p>',
-     '<h3>An AI coach on WhatsApp</h3><p>It knows their data and tells them what to do next, any time.</p>'),
-    ('<h3>Un espace membre</h3><p>Les vidéos de votre méthode, rangées dans l\'ordre où il en a besoin.</p>',
-     '<h3>A member area</h3><p>The videos of your method, in the order they need them.</p>'),
-    ('alt="L\'outil construit par l\'acheteur"', 'alt="The tool built by the buyer"'),
-    ('alt="Le coach IA sur WhatsApp"', 'alt="The AI coach on WhatsApp"'),
     # 07 — Simulateur, mode porte d'entrée
     ('data-alt="Combien entrent chez vous&nbsp;?"', 'data-alt="How many come in?"'),
     ('data-alt="Deux hypothèses suffisent."', 'data-alt="Two assumptions are enough."'),
@@ -309,7 +297,7 @@ INDEX = [
     ('Questions masquées tant que la réponse n\'est pas fournie', 'Hidden questions until the answer is provided'),
 
     # 09 — Pour qui
-    ('11 — Pour qui', '11 — Who it’s for'),
+    ('10 — Pour qui', '10 — Who it’s for'),
     ('On ne travaille pas avec tout le monde.', 'We don’t work with everyone.'),
     ('Loseless s\'adresse aux business high&#8209;ticket qui font plus de 10&#8239;000&nbsp;€ de CA par mois. En dessous, votre volume de leads ne suffit pas pour que le système soit rentable pour vous.',
      'Loseless is for high-ticket businesses doing over €10,000 in monthly revenue. Below that, your lead volume isn’t enough for the system to pay off for you.'),
