@@ -1405,32 +1405,41 @@ html[lang="en"] .proof__count { font-variant-numeric: normal; } /* sinon « 100 
 
 /* ---------- 08 FAQ ---------- */
 
-.faq__grid {
+.faq__head .h2 { max-width: 16ch; }
+.faq__cols {
   display: grid;
-  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-  gap: clamp(40px, 7vw, 120px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   align-items: start;
+  margin-top: clamp(48px, 7vh, 80px);
 }
-/* colonne gauche fixe pendant le défilement des questions */
-.faq__side { position: sticky; top: calc(var(--header-h) + 32px); }
-.faq__aside { margin-top: 40px; }
-.faq__more { font-size: 20px; margin-bottom: 18px; }
-.faq__item { border-top: 1px solid rgba(18, 18, 18, .14); }
-.faq__item:last-child { border-bottom: 1px solid rgba(18, 18, 18, .14); }
+.faq__col { display: flex; flex-direction: column; gap: 12px; }
+/* chaque question est une carte Craie ; la carte ouverte passe en Encre */
+.faq__item {
+  border-radius: clamp(18px, 1.5vw, 24px);
+  background: var(--craie);
+  color: var(--encre);
+  transition: background-color .4s var(--ease), color .4s var(--ease), box-shadow .3s var(--ease);
+}
+.faq__item.is-open { background: var(--encre); color: var(--papier); }
+@media (hover: hover) {
+  .faq__item:not(.is-open):hover { box-shadow: inset 0 0 0 1.5px var(--encre); }
+}
 .faq__q {
   width: 100%;
-  display: flex; align-items: center; gap: 20px;
-  padding: 26px 0;
+  display: flex; align-items: center; gap: 18px;
+  padding: clamp(20px, 1.8vw, 26px) clamp(20px, 1.8vw, 28px);
   background: none; border: 0;
+  color: inherit;
   text-align: left;
-  font: 800 clamp(20px, 1.9vw, 28px)/1.15 var(--sans);
-  letter-spacing: -.035em;
+  font: 800 clamp(18px, 1.5vw, 22px)/1.2 var(--sans);
+  letter-spacing: -.03em;
   cursor: pointer;
 }
 .faq__num {
   flex: none;
   min-width: 2.2em;
-  font: 700 14px/1 var(--sans);
+  font: 700 13px/1 var(--sans);
   letter-spacing: .08em;
   font-variant-numeric: tabular-nums;
   color: var(--vermillon);
@@ -1438,38 +1447,41 @@ html[lang="en"] .proof__count { font-variant-numeric: normal; } /* sinon « 100 
 .faq__text { flex: 1; }
 .faq__icon {
   position: relative; flex: none;
-  width: 36px; height: 36px; border-radius: 50%;
-  box-shadow: inset 0 0 0 1.5px var(--encre);
+  width: 34px; height: 34px; border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px currentColor;
   transition: transform .3s var(--ease), background-color .3s var(--ease), box-shadow .3s var(--ease);
 }
 .faq__icon::before, .faq__icon::after {
   content: "";
   position: absolute; left: 50%; top: 50%;
   width: 12px; height: 1.5px; margin: -.75px 0 0 -6px;
-  background: var(--encre);
-  transition: background-color .3s var(--ease);
+  background: currentColor;
 }
 .faq__icon::after { transform: rotate(90deg); }
 .faq__q[aria-expanded="true"] .faq__icon {
   transform: rotate(45deg);
   background: var(--vermillon);
   box-shadow: inset 0 0 0 1.5px var(--vermillon);
+  color: #fff;
 }
-.faq__q[aria-expanded="true"] .faq__icon::before,
-.faq__q[aria-expanded="true"] .faq__icon::after { background: #fff; }
 .faq__panel { overflow: hidden; }
-.faq__a { padding: 0 56px 30px calc(14px * 2.2 + 20px); }
-.faq__a p { max-width: 32em; font-size: 19px; line-height: 1.55; color: var(--pierre); }
-@media (max-width: 899px) {
-  .faq__grid { grid-template-columns: 1fr; }
+.faq__a { padding: 0 clamp(20px, 1.8vw, 28px) clamp(22px, 2vw, 30px) calc(clamp(20px, 1.8vw, 28px) + 13px * 2.2 + 18px); }
+/* la réponse suit la couleur de la carte (pas de texte clair sur fond Craie pendant la fermeture) */
+.faq__a p { max-width: 34em; font-size: 17px; line-height: 1.6; color: inherit; opacity: .74; }
+.faq__cta {
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: clamp(24px, 2.2vw, 32px) clamp(20px, 1.8vw, 28px);
+  border-radius: clamp(18px, 1.5vw, 24px);
+  box-shadow: inset 0 0 0 1px rgba(18, 18, 18, .16);
 }
+.faq__more { font: 800 clamp(22px, 1.9vw, 28px)/1.1 var(--sans); letter-spacing: -.035em; }
+.faq__cta-text { margin-top: 8px; font-size: 17px; color: var(--pierre); }
+.faq__cta .btn { margin-top: 22px; }
 @media (max-width: 767px) {
-  .faq__side { display: contents; }
-  .faq__head { order: 1; }
-  .faq__list { order: 2; }
-  .faq__aside { order: 3; margin-top: 8px; }
-  .faq__a { padding-right: 0; }
-  .faq__a p { font-size: 18px; }
+  .faq__cols { grid-template-columns: 1fr; }
+  .faq__a { padding-left: clamp(20px, 1.8vw, 28px); }
+  .faq__q { gap: 12px; }
+  .faq__num { min-width: 1.8em; }
 }
 
 /* ---------- 09 Pour qui ---------- */

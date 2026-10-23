@@ -204,6 +204,7 @@ INDEX = [
     # 08 — FAQ
     ('Vos questions, sans détour.', 'Your questions, straight answers.'),
     ('<p class="faq__more">Une autre question&nbsp;?</p>', '<p class="faq__more">Another question?</p>'),
+    ('<p class="faq__cta-text">On y répond pendant l\'appel, sur votre cas.</p>', '<p class="faq__cta-text">We’ll answer it on the call, for your business.</p>'),
     ('Ça cannibalise mon high&#8209;ticket&nbsp;?', 'Will it cannibalize my high&#8209;ticket sales?'),
     ('Non. Seuls les leads sous votre seuil de budget sont redirigés. Ceux qui peuvent se payer votre accompagnement continuent vers votre équipe, comme aujourd\'hui. Et les acheteurs du low&#8209;ticket deviennent vos meilleurs prospects pour votre high&#8209;ticket.',
      'No. Only leads below your budget threshold are redirected. Those who can afford your program keep going to your team, just like today. And your low&#8209;ticket buyers become your best prospects for your high&#8209;ticket offer.'),

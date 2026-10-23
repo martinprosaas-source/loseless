@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
-<link rel="stylesheet" href="styles.css?v=202610231530">
+<link rel="stylesheet" href="styles.css?v=202610231710">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 </head>
 <body>
@@ -510,86 +510,90 @@
 
   <!-- 09 — FAQ -->
   <section class="section faq" id="faq" aria-labelledby="t-faq">
-    <div class="wrap faq__grid">
-      <div class="faq__side">
-        <div class="faq__head">
-          <p class="eyebrow" data-fade>09 — FAQ</p>
-          <h2 id="t-faq" class="h2" data-split>Vos questions, sans détour.</h2>
-        </div>
-        <div class="faq__aside" data-fade>
-          <p class="faq__more">Une autre question&nbsp;?</p>
-          <a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Réserver un appel">Réserver un appel</span></a>
-        </div>
+    <div class="wrap">
+      <div class="faq__head">
+        <p class="eyebrow" data-fade>09 — FAQ</p>
+        <h2 id="t-faq" class="h2" data-split>Vos questions, sans détour.</h2>
       </div>
-      <div class="faq__list">
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-1" id="faq-b1"><span class="faq__num">01</span><span class="faq__text">Ça cannibalise mon high&#8209;ticket&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-1" role="region" aria-labelledby="faq-b1"><div class="faq__a">
-            <p>Non. Seuls les leads sous votre seuil de budget sont redirigés. Ceux qui peuvent se payer votre accompagnement continuent vers votre équipe, comme aujourd'hui. Et les acheteurs du low&#8209;ticket deviennent vos meilleurs prospects pour votre high&#8209;ticket.</p>
-          </div></div>
+      <!-- deux colonnes indépendantes : une carte qui s'ouvre ne pousse que sa colonne -->
+      <div class="faq__cols">
+        <div class="faq__col" data-stagger>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-1" id="faq-b1"><span class="faq__num">01</span><span class="faq__text">Ça cannibalise mon high&#8209;ticket&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-1" role="region" aria-labelledby="faq-b1"><div class="faq__a">
+              <p>Non. Seuls les leads sous votre seuil de budget sont redirigés. Ceux qui peuvent se payer votre accompagnement continuent vers votre équipe, comme aujourd'hui. Et les acheteurs du low&#8209;ticket deviennent vos meilleurs prospects pour votre high&#8209;ticket.</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-2" id="faq-b2"><span class="faq__num">02</span><span class="faq__text">En rattrapage ou en porte d'entrée&nbsp;: comment choisir&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-2" role="region" aria-labelledby="faq-b2"><div class="faq__a">
+              <p>Si votre offre principale vend déjà bien, on se place derrière elle pour récupérer les «&nbsp;pas le budget&nbsp;». Si vous lancez votre funnel ou que vous voulez faire entrer plus de monde, l'offre low-ticket devient votre porte d'entrée. On en parle ensemble pendant l'appel.</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-3" id="faq-b3"><span class="faq__num">03</span><span class="faq__text">Qu'est-ce que je dois faire, moi&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-3" role="region" aria-labelledby="faq-b3"><div class="faq__a">
+              <p>Presque rien. Vous validez l'offre, la page et le discours des setters avant le lancement. Ensuite, si vous voulez accélérer, une story avec le lien suffit.</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-4" id="faq-b4"><span class="faq__num">04</span><span class="faq__text">Qui sont les setters&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-4" role="region" aria-labelledby="faq-b4"><div class="faq__a">
+              <p>Des setters formés par nous, qui appellent vos leads et concluent les ventes. Ils sont payés à la commission&nbsp;: ils ne gagnent que s'ils vendent.</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-5" id="faq-b5"><span class="faq__num">05</span><span class="faq__text">Qui crée l'offre low&#8209;ticket&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-5" role="region" aria-labelledby="faq-b5"><div class="faq__a">
+              <p>Nous. On construit votre offre low&#8209;ticket de A à Z&nbsp;: l'offre, la page, la vidéo, l'outil et le workshop, sous votre nom. Vous validez tout avant le lancement.</p>
+            </div></div>
+          </div>
         </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-2" id="faq-b2"><span class="faq__num">02</span><span class="faq__text">En rattrapage ou en porte d'entrée&nbsp;: comment choisir&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-2" role="region" aria-labelledby="faq-b2"><div class="faq__a">
-            <p>Si votre offre principale vend déjà bien, on se place derrière elle pour récupérer les «&nbsp;pas le budget&nbsp;». Si vous lancez votre funnel ou que vous voulez faire entrer plus de monde, l'offre low-ticket devient votre porte d'entrée. On en parle ensemble pendant l'appel.</p>
-          </div></div>
+        <div class="faq__col" data-stagger>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-6" id="faq-b6"><span class="faq__num">06</span><span class="faq__text">Qu'est-ce que reçoit l'acheteur&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-6" role="region" aria-labelledby="faq-b6"><div class="faq__a">
+              <p>Un workshop de 7&nbsp;jours, un outil qu'il construit lui-même, un coach IA sur WhatsApp et un espace membre avec les vidéos de votre méthode.</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-7" id="faq-b7"><span class="faq__num">07</span><span class="faq__text">Comment vous êtes rémunérés&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-7" role="region" aria-labelledby="faq-b7"><div class="faq__a">
+              <p>Uniquement sur les ventes. Rien à payer pour démarrer, et vous gardez au moins 65&nbsp;% de chaque vente. Si ça ne vend pas, on ne gagne rien.</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-8" id="faq-b8"><span class="faq__num">08</span><span class="faq__text">Sur quels outils vous appuyez-vous&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-8" role="region" aria-labelledby="faq-b8"><div class="faq__a">
+              <p>L'outil de vos acheteurs est construit sur Base44, dont Loseless est partenaire. Vous n'avez rien à installer.</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-9" id="faq-b9"><span class="faq__num">09</span><span class="faq__text">Pour quels infopreneurs ça marche&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-9" role="region" aria-labelledby="faq-b9"><div class="faq__a">
+              <p>Ceux qui vendent un accompagnement high&#8209;ticket&nbsp;: pour récupérer les leads qui n'ont pas le budget, ou pour faire entrer plus de clients par une offre low&#8209;ticket.</p>
+            </div></div>
+          </div>
+          <div class="faq__cta">
+            <p class="faq__more">Une autre question&nbsp;?</p>
+            <p class="faq__cta-text">On y répond pendant l'appel, sur votre cas.</p>
+            <a class="btn btn--primary" href="reserver.html" data-book data-magnetic><span class="btn__label" data-text="Réserver un appel">Réserver un appel</span></a>
+          </div>
+          <!-- Questions masquées tant que la réponse n'est pas fournie (à réactiver avec un numéro dans l'ordre) :
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-2" id="faq-b2"><span class="faq__num">02</span><span class="faq__text">Combien de temps pour l'installer&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-2" role="region" aria-labelledby="faq-b2"><div class="faq__a">
+              <p>[À COMPLÉTER&nbsp;: délai de mise en place]</p>
+            </div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-7" id="faq-b7"><span class="faq__num">07</span><span class="faq__text">Est-ce que je m'engage sur une durée&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__panel" id="faq-7" role="region" aria-labelledby="faq-b7"><div class="faq__a">
+              <p>[À COMPLÉTER]</p>
+            </div></div>
+          </div>
+          -->
         </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-3" id="faq-b3"><span class="faq__num">03</span><span class="faq__text">Qu'est-ce que je dois faire, moi&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-3" role="region" aria-labelledby="faq-b3"><div class="faq__a">
-            <p>Presque rien. Vous validez l'offre, la page et le discours des setters avant le lancement. Ensuite, si vous voulez accélérer, une story avec le lien suffit.</p>
-          </div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-4" id="faq-b4"><span class="faq__num">04</span><span class="faq__text">Qui sont les setters&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-4" role="region" aria-labelledby="faq-b4"><div class="faq__a">
-            <p>Des setters formés par nous, qui appellent vos leads et concluent les ventes. Ils sont payés à la commission&nbsp;: ils ne gagnent que s'ils vendent.</p>
-          </div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-5" id="faq-b5"><span class="faq__num">05</span><span class="faq__text">Qui crée l'offre low&#8209;ticket&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-5" role="region" aria-labelledby="faq-b5"><div class="faq__a">
-            <p>Nous. On construit votre offre low&#8209;ticket de A à Z&nbsp;: l'offre, la page, la vidéo, l'outil et le workshop, sous votre nom. Vous validez tout avant le lancement.</p>
-          </div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-6" id="faq-b6"><span class="faq__num">06</span><span class="faq__text">Qu'est-ce que reçoit l'acheteur&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-6" role="region" aria-labelledby="faq-b6"><div class="faq__a">
-            <p>Un workshop de 7&nbsp;jours, un outil qu'il construit lui-même, un coach IA sur WhatsApp et un espace membre avec les vidéos de votre méthode.</p>
-          </div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-7" id="faq-b7"><span class="faq__num">07</span><span class="faq__text">Comment vous êtes rémunérés&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-7" role="region" aria-labelledby="faq-b7"><div class="faq__a">
-            <p>Uniquement sur les ventes. Rien à payer pour démarrer, et vous gardez au moins 65&nbsp;% de chaque vente. Si ça ne vend pas, on ne gagne rien.</p>
-          </div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-8" id="faq-b8"><span class="faq__num">08</span><span class="faq__text">Sur quels outils vous appuyez-vous&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-8" role="region" aria-labelledby="faq-b8"><div class="faq__a">
-            <p>L'outil de vos acheteurs est construit sur Base44, dont Loseless est partenaire. Vous n'avez rien à installer.</p>
-          </div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-9" id="faq-b9"><span class="faq__num">09</span><span class="faq__text">Pour quels infopreneurs ça marche&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-9" role="region" aria-labelledby="faq-b9"><div class="faq__a">
-            <p>Ceux qui vendent un accompagnement high&#8209;ticket&nbsp;: pour récupérer les leads qui n'ont pas le budget, ou pour faire entrer plus de clients par une offre low&#8209;ticket.</p>
-          </div></div>
-        </div>
-        <!-- Questions masquées tant que la réponse n'est pas fournie (à réactiver avec un numéro dans l'ordre) :
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-2" id="faq-b2"><span class="faq__num">02</span><span class="faq__text">Combien de temps pour l'installer&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-2" role="region" aria-labelledby="faq-b2"><div class="faq__a">
-            <p>[À COMPLÉTER&nbsp;: délai de mise en place]</p>
-          </div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq-7" id="faq-b7"><span class="faq__num">07</span><span class="faq__text">Est-ce que je m'engage sur une durée&nbsp;?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__panel" id="faq-7" role="region" aria-labelledby="faq-b7"><div class="faq__a">
-            <p>[À COMPLÉTER]</p>
-          </div></div>
-        </div>
-        -->
       </div>
     </div>
   </section>
@@ -656,6 +660,6 @@
 <script src="vendor/SplitText.min.js" defer></script>
 <script src="vendor/CustomEase.min.js" defer></script>
 <script src="vendor/lenis.min.js" defer></script>
-<script src="main.js?v=202610231530" defer></script>
+<script src="main.js?v=202610231710" defer></script>
 </body>
 </html>

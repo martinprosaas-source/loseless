@@ -291,14 +291,16 @@
   // ---------------------------------------------------------------
   function initFaq() {
     const items = $$('.faq__item').map(item => ({
+      item,
       btn: $('.faq__q', item),
       panel: $('.faq__panel', item),
     }));
 
     const set = (it, open, animate) => {
-      const { btn, panel } = it;
+      const { item, btn, panel } = it;
       if ((btn.getAttribute('aria-expanded') === 'true') === open && animate) return;
       btn.setAttribute('aria-expanded', String(open));
+      item.classList.toggle('is-open', open);
       if (!animate) {
         panel.hidden = !open;
         return;
